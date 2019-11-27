@@ -1,2 +1,2 @@
 # Notes
-Notes for INF226 and INF214
+Some notes for INF226, INF214 and STAT101
