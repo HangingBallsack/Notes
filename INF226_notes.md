@@ -78,7 +78,7 @@ The list has entries consisting of:
 - Enviromental metrics
 
 **CVSS Example:**   
-<img src=CVSS.png width = 600></img>
+<img src = img/CVSS.png width = 600></img>
 
 
 #### NVD - National Vulnerability Database
@@ -144,7 +144,7 @@ In a system with access control lists, permissions are assigned to objects:
 - Each object has a list of permissions assgned to different users.
 Typical (but not always), the access control list specifies an owner of the object
 
-<img src = ACM.png width = 600></img>
+<img src = img/ACM.png width = 600></img>
 
 **Example:**
 In Unix-like systems:
@@ -164,7 +164,7 @@ Every file has:
 In a role based access control system, a set of roles abstract the permissions from users
 
 
-<img src = RBAC.png width = 450></img>
+<img src = img/RBAC.png width = 450></img>
 
 **Example:**
 
@@ -354,7 +354,7 @@ Requirements of a cryptographic hash function:
 
 ### Man-in-the-middle attacks
 
-<img src=MiM.png width = 450></img>
+<img src = img/MiM.png width = 450></img>
 
 > Assumption: The man in the middle does not strike the first time  
 > Mechanism: Trust the public key used in first session. Use that for  authentication of later session
