@@ -168,11 +168,11 @@ In a role based access control system, a set of roles abstract the permissions f
 
 **Example:**
 
->U (users): {alice, bob}  
->R (roles): {doctor, patient}  
->P (permissions): {writePerscription, withdrawMedicine}  
->RolePerm: {(doctor, writePerscription), (patient, withdrawMedicine)}  
->UserRoles: {(alice, doctor), (bob, patient), (alice, patient)}
+>- U (users): {alice, bob}  
+>- R (roles): {doctor, patient}  
+>- P (permissions): {writePerscription, withdrawMedicine}  
+>- RolePerm: {(doctor, writePerscription), (patient, withdrawMedicine)}  
+>- UserRoles: {(alice, doctor), (bob, patient), (alice, patient)}
 
 ### Capability based access control
 Gidder ikke skrive mer om dette, kanskje senere :P :P :P 
@@ -187,56 +187,56 @@ Programs can communicate with the OS through **system calls,** which interrupts 
 
 **OS level priviledge separation**
 On the OS level individual processes have different protection for different resources:
->- Memory:
->   - Virtual memory mapping
->   - Limits
->- CPU
->   - Scheduling priority
->- File system
->   - Permissions
->   - chroot or other visibility restrictions
->   - quotas
->- Open files/sockets/network connections
->   - file descriptors
->   - limits
+- Memory:
+   - Virtual memory mapping
+   - Limits
+- CPU
+   - Scheduling priority
+- File system
+   - Permissions
+   - chroot or other visibility restrictions
+   - quotas
+- Open files/sockets/network connections
+   - file descriptors
+   - limits
 
 ## **Memory protection**
 **Virtual memory mapping**
 
->- Each program gets their own virtual address space
->- memory location not decided at compile time
->- memory fragmentation hidden from programs
->- easy to page out to swap (store memoty on hard drive)  
->
-> But, as a consequence: processes cannot directly address or access the memory of other processes
+- Each program gets their own virtual address space
+- memory location not decided at compile time
+- memory fragmentation hidden from programs
+- easy to page out to swap (store memoty on hard drive)  
+
+But, as a consequence: processes cannot directly address or access the memory of other processes
 
 Exceptions:
->1. Processes can allocate shared memory
->2. A process can attach themselces as a debugger to another process  
->- Number 2 is allowed by default in Linux for processes with the same UID 
+1. Processes can allocate shared memory
+2. A process can attach themselces as a debugger to another process  
+- Number 2 is allowed by default in Linux for processes with the same UID 
 
 ## **File system abstraction**
 ### The UNIX file system
 >The *unix* file system provides a unified way to access file systems based in **the root directory /**
 
 Directories group the files into logical parts:
->- /bin: programs
->- /sbin: administrative programs
->- /etc: system configuration
->- /dev: virtual file system of devices
->- /home: individul user's home folders
->- /tmp: temporary files
->- ...
+- /bin: programs
+- /sbin: administrative programs
+- /etc: system configuration
+- /dev: virtual file system of devices
+- /home: individul user's home folders
+- /tmp: temporary files
+- ...
 
 ### Chroot
 The operating system can restrict process file access by **changing the root dir to a different directory**
->- **Example:** After chroot /home/bar the path /bin/foo translates to /home/bar/bin/foo
->- **Note:** a UID=0 (root) process easily access resources outside the new root,
+- **Example:** After chroot /home/bar the path /bin/foo translates to /home/bar/bin/foo
+- **Note:** a UID=0 (root) process easily access resources outside the new root,
 This provides a form of file system virtualisation
 
 Usefulness of chroot is limited by the restriction that only root can do it.
->- Imagine that a user could set up a root folder with a forged /etc/passwd and /etc/shadow
->- Then they could fool a SUID program (such as su) to give them  UID=0 shel
+- Imagine that a user could set up a root folder with a forged /etc/passwd and /etc/shadow
+- Then they could fool a SUID program (such as su) to give them  UID=0 shel
 
 ## **OS virtualisation**
 **Docker:** 
@@ -303,42 +303,42 @@ Monitor does actons on the slaves behalf
 ## **Passwords**
 ### Guidelines
 The guidelines for passwords are:
->- Requre a minimum password length
->- The minimm length requirements myst be 8 characters or greater
->- Allow at least 64 characters
->- check against a list of known bad passwords. For instance:
->   - Dictionary words
->   - Repetitive or sequential characters (aaaaa123, 1234abcd)
->   - Context-specific words, such as for Facebook the password "Facebook123"
->   - Passwords obtained form previous breach corpuses
+- Requre a minimum password length
+- The minimm length requirements myst be 8 characters or greater
+- Allow at least 64 characters
+- check against a list of known bad passwords. For instance:
+   - Dictionary words
+   - Repetitive or sequential characters (aaaaa123, 1234abcd)
+   - Context-specific words, such as for Facebook the password "Facebook123"
+   - Passwords obtained form previous breach corpuses
   
 ### Storing passwords
 > foobar→aec070645fe...  
 > foobat→c7f0f45765b...
 
 Requirements of a cryptographic hash function:
->- **One way:** Gien y, difficult to find x such that h(x) = y
->- **Collision free:** Difficult to find x and x' such that h(x) = h(x')
->- A small change in input yield a large difference in output
->- quick to compute  
+- **One way:** Gien y, difficult to find x such that h(x) = y
+- **Collision free:** Difficult to find x and x' such that h(x) = h(x')
+- A small change in input yield a large difference in output
+- quick to compute  
   
 *Bad (has collisions):*
->- MD5
->- SHA1  
+- MD5
+- SHA1  
 
 *Good (no collisions):*  
->- SHA256/512
->- SHA3
+- SHA256/512
+- SHA3
 
 #### Rainbow tables
-> Rainbow tables refer to a time-space-tradeoff when creating a **lookup table for hash values -> plaintext**
+Rainbow tables refer to a time-space-tradeoff when creating a **lookup table for hash values -> plaintext**
 
 #### Salting
-> Efficient solution to make rainbow tables/ hash dictionaries infeasible instead of storing ```h(x)```, generate random byte-string s and store ```s, h(h(x)⊕s)```
+Efficient solution to make rainbow tables/ hash dictionaries infeasible instead of storing ```h(x)```, generate random byte-string s and store ```s, h(h(x)⊕s)```
 
 **How much salt?**
-> UNIX-like systems use 128-bits salts.  
-> Salting does not help against a brute-force attack on a single password
+UNIX-like systems use 128-bits salts.  
+Salting does not help against a brute-force attack on a single password
 
 ## **Two-factor authentication**
 - SMS codes (Considered insecure: Example Reddit developers hacked via SMS intercept)
@@ -356,47 +356,47 @@ Requirements of a cryptographic hash function:
 
 <img src = img/MiM.png width = 450></img>
 
-> Assumption: The man in the middle does not strike the first time  
-> Mechanism: Trust the public key used in first session. Use that for  authentication of later session
-> 
-> Works well for long-lasting trust-relationships. Or when no existing trust relationship exists (i.e web-site registration)
+Assumption: The man in the middle does not strike the first time  
+Mechanism: Trust the public key used in first session. Use that for  authentication of later session
+
+Works well for long-lasting trust-relationships. Or when no existing trust relationship exists (i.e web-site registration)
 
 ### Centralized Certificate Authorities
-> Assumption: We trust a central authority to verify public keys for us  
-> Mechanism: Central authority verifies identity and issues certificates on public keys  
-> Examples:
->   - Browsers ship with a list of public keys of trusted Certificate Athorities
->   - Organisations can disgtribute their own certificates for internal use
+Assumption: We trust a central authority to verify public keys for us  
+Mechanism: Central authority verifies identity and issues certificates on public keys  
+Examples:
+  - Browsers ship with a list of public keys of trusted Certificate Athorities
+  - Organisations can disgtribute their own certificates for internal use
 
 ### Logged in
 How do we ensure that each request comes from a valid logged in user?
 
 Example:
->   - /login
->       - User request login form, and enters password
->   - /inbox
->       - User posts login details to the inbox page
->       - Server responds with inbox, listing messages, after checking password
->   - /delete?messageid=123
->       - User requests a message deleted
->      - **How can the server know the user is the same?**  
+  - /login
+      - User request login form, and enters password
+  - /inbox
+      - User posts login details to the inbox page
+      - Server responds with inbox, listing messages, after checking password
+  - /delete?messageid=123
+      - User requests a message deleted
+     - **How can the server know the user is the same?**  
 
 The standard way solution is to use **session ID**, which identifies the suer in the following session.  
 Requires:  
-> - Entropy: Session ID must not be guessable (random, 128 bits)
-> - Secrecy: Session ID must not be leaked:
->    - HTTPS
->   - Debugging modes often leak session IDs
->   - Cross-Site-Scripting (Cookies: HttpOnly, SameSite)
+- Entropy: Session ID must not be guessable (random, 128 bits)
+- Secrecy: Session ID must not be leaked:
+   - HTTPS
+  - Debugging modes often leak session IDs
+  - Cross-Site-Scripting (Cookies: HttpOnly, SameSite)
 
 ### Structure of a user authentication scheme based on passwords
-> 1. Provide a way for user to authenticate server (HTTPS w/valid certificate)
-> 2. Establish a secure communication channel (HTTPS)
-> 3. User transmits password
-> 4. Server verifies password:
->    - Salted (128 bits)
->    - Run through an expensive key derivation function (SCrypt)
-> 5. Server responds with a secure session ID
-> 6. Client program stores session ID as securely as possible
+1. Provide a way for user to authenticate server (HTTPS w/valid certificate)
+2. Establish a secure communication channel (HTTPS)
+3. User transmits password
+4. Server verifies password:
+   - Salted (128 bits)
+   - Run through an expensive key derivation function (SCrypt)
+5. Server responds with a secure session ID
+6. Client program stores session ID as securely as possible
 
 # <font color = red> Web security: TLS and HTTPS - 10<font>
