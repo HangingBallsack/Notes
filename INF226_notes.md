@@ -478,3 +478,69 @@ TLS version 1.3 has reduced the number of supported ciphers:
 HTTP can be transmitted over TLS(HTTPS). Authentication priveded by Certificate Authorities (such as Let's Encrypt):
 - Same-origin protocol separates HTTP from HTTPS (i.e HTTP =/= HTTPS)
 - Many sites still serve content over plaintext HTTP
+
+# <font color = red>Cross site scripting</font>
+## Same-origin policy
+An **origin** is a triple:
+- Protocol
+- Domain
+- Port number   
+
+Example: https://uib.no/ gives:
+- Protocol: https
+- Hostname: www.uib.no
+- Port number: 443   
+
+The **same-origin policy** restricts scripts run in the browser to only *access reoucres from the same origin*.   
+Example: A script can only access cookies from the same origin   
+
+The following URLs have the same origin:
+- http://geocities.com/bob/index.html
+- http://geocities.com/eve/script.html   
+
+## Cross-site scripting
+Web browser insulate resources, such as cookies or JavaScript, from different origins.   
+*Cross-site scripting** (XSS) occurs when a web-server unintentionally servs JavaScript from an attacker to client browsers.   
+This allows attacker code to acces reouces from victim server origin   
+
+Example:   
+```JavaScript
+$username = $_GET['username'];
+echo '<div class="header"> Welcome, ' . $username . '</div>';
+```   
+Now username could contain JavaScript which can:
+- Steal session cookie
+- Trick the user to give their password by showing fake login screen
+- Mine bitcoins
+- ...
+
+
+How does the attacker inject scripts?
+- User data from one user visible to another (Example: The Samy worm on MySpace)
+- URL variables
+- User data from post requests
+- Evaluating user data in client side script
+
+
+### XML HttpRequest
+Scripts can make HTTP requests to the current origin.   
+This means that once an attacker has injected a script, he can do anything the user could do:
+- GET pages
+- POST forms
+- ...   
+**Example:** The Samy Worm used POST requests to update the profile, and add the user samy as a friend
+
+## XSS prevention strategies
+### Filtering input
+- Blacklisting is bad security practice.
+- The disallowed characters (<>(){}[] * " ') are quite common
+- Client side checking is easy to circumvent
+
+### Escaping output
+For a string placed inside an HTML element (<div>DATA</div>), we can do the following:
+- & -> \&amp;
+- < -> \&lt;
+- \> -> \&gt;
+- " -> \&quot;
+- ' -> \&#x27
+- / -> \&#x2F
