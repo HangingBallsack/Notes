@@ -144,7 +144,7 @@ In a system with access control lists, permissions are assigned to objects:
 - Each object has a list of permissions assgned to different users.
 Typical (but not always), the access control list specifies an owner of the object
 
-<img src = img/ACM.png width = 600></img>
+    <img src = img/ACM.png width = 600></img>
 
 **Example:**
 In Unix-like systems:
@@ -152,9 +152,9 @@ In Unix-like systems:
 - Objects: files, sockets, processes
 
 Permissions are structured according to users and groups
-- User ID **(UID)**
-- Group ID **(GUID)**
-Special UID: 0 **(root)**. Can ignore mot permission restrictions
+- User ID **(UID)**  
+- Group ID **(GUID)**  
+- Special UID: 0 **(root)**. Can ignore mot permission restrictions
 
 Every file has:
 - Owner ID
@@ -168,11 +168,11 @@ In a role based access control system, a set of roles abstract the permissions f
 
 **Example:**
 
->- U (users): {alice, bob}  
->- R (roles): {doctor, patient}  
->- P (permissions): {writePerscription, withdrawMedicine}  
->- RolePerm: {(doctor, writePerscription), (patient, withdrawMedicine)}  
->- UserRoles: {(alice, doctor), (bob, patient), (alice, patient)}
+- U (users): {alice, bob}  
+- R (roles): {doctor, patient}  
+- P (permissions): {writePerscription, withdrawMedicine}  
+- RolePerm: {(doctor, writePerscription), (patient, withdrawMedicine)}  
+- UserRoles: {(alice, doctor), (bob, patient), (alice, patient)}
 
 ### Capability based access control
 Gidder ikke skrive mer om dette, kanskje senere :P :P :P 
@@ -213,19 +213,19 @@ But, as a consequence: processes cannot directly address or access the memory of
 Exceptions:
 1. Processes can allocate shared memory
 2. A process can attach themselces as a debugger to another process  
-- Number 2 is allowed by default in Linux for processes with the same UID 
+   - Number 2 is allowed by default in Linux for processes with the same UID 
 
 ## **File system abstraction**
-### The UNIX file system
->The *unix* file system provides a unified way to access file systems based in **the root directory /**
+### The UNIX file system  
+The *unix* file system provides a unified way to access file systems based in the **root directory /**
 
 Directories group the files into logical parts:
-- /bin: programs
-- /sbin: administrative programs
-- /etc: system configuration
-- /dev: virtual file system of devices
-- /home: individul user's home folders
-- /tmp: temporary files
+- /bin:     programs
+- /sbin:    administrative programs
+- /etc:     system configuration
+- /dev:     virtual file system of devices
+- /home:    individul user's home folders
+- /tmp:     temporary files
 - ...
 
 ### Chroot
@@ -310,8 +310,20 @@ The guidelines for passwords are:
    - Dictionary words
    - Repetitive or sequential characters (aaaaa123, 1234abcd)
    - Context-specific words, such as for Facebook the password "Facebook123"
-   - Passwords obtained form previous breach corpuses
-  
+   - Passwords obtained form previous breach corpuses   
+
+
+Structure of user authentication scheme based on passwords:
+1. Provide a way for user to authenticate server (HTTPS)
+2. Establish a secure communication channel (HTTPS)
+3. User transmits password
+4. Server verifies password:
+   1. Salted (128 bits)
+   2. Run through an expensive key derivation funxtion (ex. SCrypt)
+5. Server respons with a secure session ID
+6. Client program stores session ID as securely as possible
+
+
 ### Storing passwords
 > foobar→aec070645fe...  
 > foobat→c7f0f45765b...
@@ -340,6 +352,7 @@ Efficient solution to make rainbow tables/ hash dictionaries infeasible instead 
 UNIX-like systems use 128-bits salts.  
 Salting does not help against a brute-force attack on a single password
 
+
 ## **Two-factor authentication**
 - SMS codes (Considered insecure: Example Reddit developers hacked via SMS intercept)
 - Print-out with one-time codes
@@ -351,6 +364,13 @@ Salting does not help against a brute-force attack on a single password
 1. Generate key-pair
 2. Exchange public keys
 3. Compute shared sevret
+
+Public keys must be authenticated, many different schemes for this:
+- Web-of-trust (key-signing)
+- Trust upon first use
+- Centralised certificate authorities
+- ...
+
 
 ### Man-in-the-middle attacks
 
@@ -399,4 +419,62 @@ Requires:
 5. Server responds with a secure session ID
 6. Client program stores session ID as securely as possible
 
-# <font color = red> Web security: TLS and HTTPS - 10<font>
+# <font color = red> Web security: TLS and HTTPS - 10</font>
+## **The World Wide Web**
+Communication on the www:
+- Domain Name Service (DNS)
+- Hyper Text Transfer Protocol (HTTP)
+- Uniform Resource Identifier (URI)
+
+Web-servers respond to HTTP requests
+- Static websites vs dynamic web sites
+- Dynamic: Any language can be used on the server side
+
+### HTTP requests
+- **GET** is the most common request type. it fetches a resource at a specified URI
+- **HEAD** fetches only the headers for the specified resource
+- **POST** Posts content to a specified resource.
+
+Each request contains headers which specify meta-data about the request:
+- Accepted formats/languages
+- Cookies
+- User agent
+- ETag
+- ...
+
+### HTTP responses
+The server reponds with:
+- a status message (200, 404, 500 ...)
+- headers
+- (posibly) the content of requested resource
+
+
+## **Stream ciphers and Message Authentication Codes**
+### Stream ciphers
+Most modern cryptography is based on block ciphers.
+- Fixed input and output length (e.g 128 bits)
+- Deterministic: Same key and input gives same output   
+**Problem:** Most applications have variable length input/output   
+
+    <img src=img/StreamCipher.png width=450></img>
+
+- Stream ciphers are based on cryptographic pseudo-random number generators (CPRNGs)
+- provides safe extension to arbitrary inputs   
+BUT: They are malleable!
+
+#### TLS
+- Previous versions include weak ciphers ( < version 1.3)
+- Provides:
+  - Confidentiality
+  - Authentication (Via X.509 certificates)
+  - Forward secrecy   
+If you need cryptographic transport security: use TLS 1.3   
+
+TLS version 1.3 has reduced the number of supported ciphers:
+- AES in counter mode and CBC-MAC
+- ChaCha20 and Poly1305 MAC   
+
+#### HTTPS
+HTTP can be transmitted over TLS(HTTPS). Authentication priveded by Certificate Authorities (such as Let's Encrypt):
+- Same-origin protocol separates HTTP from HTTPS (i.e HTTP =/= HTTPS)
+- Many sites still serve content over plaintext HTTP
