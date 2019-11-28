@@ -164,7 +164,7 @@ Every file has:
 In a role based access control system, a set of roles abstract the permissions from users
 
 
-<img src = img/RBAC.png width = 450></img>
+<img src = img/RBAC.png width = 600></img>
 
 **Example:**
 
@@ -374,7 +374,7 @@ Public keys must be authenticated, many different schemes for this:
 
 ### Man-in-the-middle attacks
 
-<img src = img/MiM.png width = 450></img>
+<img src = img/MiM.png width = 600></img>
 
 Assumption: The man in the middle does not strike the first time  
 Mechanism: Trust the public key used in first session. Use that for  authentication of later session
@@ -608,7 +608,8 @@ The HttpOnly flag for cookies indicates to browsers that the cookie:
 The following three flags should be set:
 - Secure
 - SameSite (lax or strict depending on use case)
-- HttpOnly (is not really effective)   
+- HttpOnly (is not really effective)
+
 But: If your site already uses a lot of JavaScript, consider keeping the session token in local storage.
 
 ## Cross site request forgery protection
@@ -622,12 +623,13 @@ Keeping th eCSRF-token stored on the server is annoying. It is tempting to put t
 - Cookie:
   - Csrf-Token=.......
 - Form-field:
-  - ```<input type="hidden name="token">......</input>```   
+  - ```<input type="hidden name="token">......</input>```
+
 But, this means that if the attacker can set a cookie for the domain, he can forge requests:
 - Subdomains can set cookies for the while domain
 - HTTP can set (but not read 'Secure') cookies for HTTPS
 
-**CSP - Content Security Policy**
+**CSP - Content Security Policy**   
 Policies set in the HTTP header:
 - Control which sources content are allowed to come from
 - Violations are reported back to the server
@@ -642,3 +644,119 @@ Policies set in the HTTP header:
   - what requests must be protected?
 - Cookie flags
 
+# <font color=red>Capability based security - 13</font>
+a **capability** (known in some systems as a **key**) is a communicable, unforgeable token of authority
+
+A process/object/user/service/... should only have as much privilege as needed to perform their intended task
+
+A *capability* consists of:
+- a Reference to an object
+- A set of permissinos for that object
+
+A capability is used **whenever a resource is accessed.**
+
+**Example:** read(capability):   
+- Reads rom the object pointed to by capability
+- if capability allows reading
+
+## Using capabilities
+Restricting access to programs:
+- Give only the capabilities needed
+- What capabilities should be given to:
+  - a word processor=
+  - a web site=
+  - a system login manager=
+
+This allows very fine grained applicatinos of the principle of least privilege
+
+### Unforgeable
+If a capability can be forged, it is useless as a securit measure.   
+Two approaches to unforgeability:
+- Enforced by supervisor (operating systems, virtual machine, compiler, ...)
+  - In an OS, the kernel can keep a **table of capabilities** for each process
+    - A capability is **just an index** in the table.
+    - Since the process cannot access its table, it cannot forge capabilities
+  - Example:
+    - File descriptors on UNIX
+- Unguessable capabilities (random tokens, cryptographic signatures, ...)
+  - Relies on entropy and cryptographic security to prevent forging
+    - A capability can be referenced by a random number
+    - A capability can be signed
+  - must be used when transferring capabilities over networks
+
+### Memory safe capabilities
+A memory safe **object capability system** can be obtained by:
+- **Endowment**: Alice might have intrinsic capabilities given to her at her creation
+- **creation**: Alice gets capability to access an object she creates
+- **introduction**: Alice transfers a capability to Bib
+
+This approach **relies on the memory safety** of the language.  
+Example:   
+- Bank account capabilities:
+  - Deposit D
+  - Withdraw W
+  - Read balance R
+- Attenuation:
+  - Alice wants Bob to transfer her some money
+  - Alice has a (D,W,R) capability to her own account
+  - Alice creates a new (D) capability to her account and transfers it to Bob
+
+The creater of a capability should be able to revoke it.
+
+CSRF-tokens can be viewed as capabilities:
+- Denotes an object (form target) and permission (POST, GET, ...)
+- Unforgeable (unguessable)
+
+### Capabilities summary
+A capability consists of:
+- A **reference** to an object
+- A seet of **permissions** for that object
+
+A Capability is a unforgeable, transferrable token of authority
+
+**Not related to capability based security:**
+- POSIX capabilities
+- Docker capabilities
+
+# <font color=red>Incorrect deserialisation - 14</font>
+## Capsicum
+**Privilege separation**
+Drawbacks:
+- Chroot requires UID 0
+- When transitioning between privileges data must be serialised
+- Relies on shared memory
+- Resoning about securit requires modelling monitor as a state machine
+- Does not limit network access rom slave
+
+**Capsicum**
+Design:
+- Introduces a special **capability mode** for processes
+- Provide **new kernel primitives** (cap_enter, cap_new, ...)
+- Changes existing kernel primitives when in capability mode
+- **Userspace library** (libcapsicum).   
+
+    <img src=img/Capsicum.png width = 600></img>
+
+- In capsicum, **capabilities are file descriptors** along with a set of acess rights
+  - there are about 60 possible access rights for a capability in capsicum
+- A capability is created throguh cap_new by giving it a file descriptor and rights mask
+  - Capabilities are transferred through Inter Process Communication (IPC) channels, such as sockets.
+
+.
+.
+.
+.
+.
+.
+
+## Insecure deserialisation   
+**Serialization** is the process of turning objects of a programming language into byte arrays for transport.   
+- Java serialization
+- JSON (Multiple language support)
+- Pickle (Python)
+- Protocol buffers
+**Deserialization** is the process of turning these byte arrays back into objects.   
+The code doing deserialization is at the forefront of the program security.   
+Bugs in deserialization can often lead to *remote code execution*.
+
+# <font color=red>Security through the software development cycle - 15</font>
