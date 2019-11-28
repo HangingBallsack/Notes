@@ -595,7 +595,7 @@ The SameSite flag has three possible values:
 - **none:** the cookie is always sent:
 - **strict:** the cookie is only sent the request is initiated from the same origin
 - **lax:** the cookie is still sent when followin links (GET requests) from other origins, but not with other requests (POST, DELETE, ...)   
-browser support for this flag is imporving, but CSRF tokens are still recommended
+Browser support for this flag is imporving, but CSRF tokens are still recommended
 
 ### The HttpOnly flag
 In 2002, the most pupular way to exploit XSS was wstealing the session token using JavaScript.   
@@ -629,7 +629,8 @@ But, this means that if the attacker can set a cookie for the domain, he can for
 - Subdomains can set cookies for the while domain
 - HTTP can set (but not read 'Secure') cookies for HTTPS
 
-**CSP - Content Security Policy**   
+**CSP - Content Security Policy**
+
 Policies set in the HTTP header:
 - Control which sources content are allowed to come from
 - Violations are reported back to the server
@@ -663,9 +664,9 @@ A capability is used **whenever a resource is accessed.**
 Restricting access to programs:
 - Give only the capabilities needed
 - What capabilities should be given to:
-  - a word processor=
-  - a web site=
-  - a system login manager=
+  - a word processor?
+  - a web site?
+  - a system login manager?
 
 This allows very fine grained applicatinos of the principle of least privilege
 
@@ -690,7 +691,8 @@ A memory safe **object capability system** can be obtained by:
 - **creation**: Alice gets capability to access an object she creates
 - **introduction**: Alice transfers a capability to Bib
 
-This approach **relies on the memory safety** of the language.  
+This approach **relies on the memory safety** of the language.
+
 Example:   
 - Bank account capabilities:
   - Deposit D
@@ -720,7 +722,7 @@ A Capability is a unforgeable, transferrable token of authority
 
 # <font color=red>Incorrect deserialisation - 14</font>
 ## Capsicum
-**Privilege separation**
+**Privilege separation**   
 Drawbacks:
 - Chroot requires UID 0
 - When transitioning between privileges data must be serialised
@@ -728,7 +730,7 @@ Drawbacks:
 - Resoning about securit requires modelling monitor as a state machine
 - Does not limit network access rom slave
 
-**Capsicum**
+**Capsicum**   
 Design:
 - Introduces a special **capability mode** for processes
 - Provide **new kernel primitives** (cap_enter, cap_new, ...)
@@ -760,3 +762,100 @@ The code doing deserialization is at the forefront of the program security.
 Bugs in deserialization can often lead to *remote code execution*.
 
 # <font color=red>Security through the software development cycle - 15</font>
+**Software security** is the ability of software to function according to intentions in an **adverserial enviroment**
+
+*ASSUMPTIONS -> SECURITY MECHANISMS -> SECURITY REQUIREMENTS*
+
+1. **Identify security requirements** which capture the intetions for the software.
+2. **Make explicit the assumptions** about the enviroment the software will run.
+3. **Design mechanisms** which satisfy the requirements given the assumptions
+
+## Non-functional requirements
+
+### Availability
+**Availability** is the proportion of time a system spends in a functional state.
+
+Causes for downtime:
+- Malicious attacks
+- Software bugs
+- Hardware failure
+- Failure of services
+- Exessive usage (exhaustion of scarse resources: CPU/GPU etc)
+
+### Capacity
+**Capacity** refers to the maximum number simultaneous of users/transactions.
+
+### Scalability
+**Scalability** is the ability to increase capacity
+
+What are the bottle-nexks?
+
+Running multiple instances:
+- Load balancing (DNS round-robin)
+- Location
+- Secure communication between instances
+- Eventual consistency
+
+### Performance
+**Performance** is:
+- Responsiveness of the software to users
+- Rate of transaction processing
+
+Covers both **latency and throughput**
+
+### Efficiency
+**Efficiency** is the ability to make use of scarse resources such as:
+- Memory / Cache
+- Processing power
+- Storage
+- Network bandwidth
+- Latency
+
+Increasing software efficiency gives a better performance/hardware requirement
+
+### Portability
+**Portability** is the ability of the software to run on different systems with little adaptation
+- Language dependent (Assembly vs C vs Java)
+- Portability favours abstractions
+- Documentation
+
+## Recoverability
+**Recoverability** is the *time to recover from distruptive events*
+
+### Cohesion
+**Cohesion** is the degree to which parts of a system / module belong together
+
+Strong cohesion: Each module is **robust** and **reusable**   
+Contrast with **coupling**, the interdependency wetween modules
+
+## Threat model
+- What **threats** can an attack pose (STRIDE)?
+- Which part of the system is likely to be **controlled by an attacker**?
+- what **motivates** an attacker?
+- What **attack vectors** can an attacker use?
+
+## Logging
+What to log:
+- Authentication events
+- Attempted intrusions
+- Violations of invariants
+- Unusual behaviour
+- Performance statistics
+
+What not to log:
+- Sensitive information
+- Keys
+- Passwords
+- User data
+
+## Monitoring
+In order to resond to an ongoing threat four things must happen:
+1. Detection
+2. Logging
+3. Monitoring
+4. Response
+
+## Securing development and deplayment
+Security is important during development:
+- An attacker who can modify the source code can make his own back-doors
+- How can we trust third pary libraries and APIs?
