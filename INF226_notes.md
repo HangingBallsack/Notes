@@ -448,6 +448,16 @@ The server reponds with:
 - headers
 - (posibly) the content of requested resource
 
+### HTTP Strict Transport Security
+Is a HTTP reponse header, which tells the client to **always use HTTPS with this domain.**   
+HSTS can be preloaded into browsers
+
+Protects agains:
+- User accepting a bad certificate
+- Downgrade to plaintext HTTP
+- Old HTTP bookmarks   
+**Note:** if your domain is on the preload lsit, you cannot change back to HTTP - clients will no longer accept it
+
 
 ## **Stream ciphers and Message Authentication Codes**
 ### Stream ciphers
@@ -479,7 +489,7 @@ HTTP can be transmitted over TLS(HTTPS). Authentication priveded by Certificate 
 - Same-origin protocol separates HTTP from HTTPS (i.e HTTP =/= HTTPS)
 - Many sites still serve content over plaintext HTTP
 
-# <font color = red>Cross site scripting</font>
+# <font color = red>Cross site scripting - 11</font>
 ## Same-origin policy
 An **origin** is a triple:
 - Protocol
@@ -537,10 +547,98 @@ This means that once an attacker has injected a script, he can do anything the u
 - Client side checking is easy to circumvent
 
 ### Escaping output
-For a string placed inside an HTML element (<div>DATA</div>), we can do the following:
+For a string placed inside an HTML element (```<div>DATA</div>```), we can do the following:
 - & -> \&amp;
 - < -> \&lt;
 - \> -> \&gt;
 - " -> \&quot;
 - ' -> \&#x27
-- / -> \&#x2F
+- / -> \&#x2F   
+
+### The DON'Ts
+Avoid inserting untrusted data in tag names   
+```<NEVER PUT UNTRUSTED DATA HERE... href="/test" />```
+
+Avoid inserting untrusted data in attribute names   
+```<div ... NEVER PUT UNTRUSTED DATA HERE ... =test />```
+
+Avoid inserting utrusted data in scripts   
+```<script> ... NEVER PUT UNTRUSTED DATA HERE ... </script>```
+
+Avoid inserting untrusted data directly in CSS   
+``` CSS
+<style>
+... NEVER PUT UNTRUSTED DATA HERE ...
+</style>
+```
+
+Avoid stupid shit like dis:   
+- ```{ background-url : "javascript:alert(1)"; }```
+- ```{ text-size: "expression(alert("XSS"))"; }```
+
+
+### The DOs
+- HTML sanitisers (Example OWASP AntiSamy project)
+- Using another markup language (Markdiwbm BBCode) with safe conversion to HTML
+  - Markdown allows literal HTML, which must be sanitized
+  - Many BBCode implementaton do nothing to prevent XSS   
+- Notice: Even graphical formatting tools must represent the formatting in some waym abd can be just as vulnerable to XSS as code-based ones
+
+# <font color=red>CWE-352: Cross-Site Request Forgery (CSRF) - 12</font>
+## Securing the session token
+Cookies are **not covered** by same origin policy by default:
+- Cookies from **https:**//example.com/ wil be sent to **http:**//example.com  
+Solution: Set the Secure flag on the cookie to ```True```
+
+### The SameSite flag
+The SameSite flag has three possible values:
+- **none:** the cookie is always sent:
+- **strict:** the cookie is only sent the request is initiated from the same origin
+- **lax:** the cookie is still sent when followin links (GET requests) from other origins, but not with other requests (POST, DELETE, ...)   
+browser support for this flag is imporving, but CSRF tokens are still recommended
+
+### The HttpOnly flag
+In 2002, the most pupular way to exploit XSS was wstealing the session token using JavaScript.   
+The HttpOnly flag for cookies indicates to browsers that the cookie:
+- should only be sent in the HTTP-header
+- should not be available to scripts
+
+
+### Cookie conclusion
+The following three flags should be set:
+- Secure
+- SameSite (lax or strict depending on use case)
+- HttpOnly (is not really effective)   
+But: If your site already uses a lot of JavaScript, consider keeping the session token in local storage.
+
+## Cross site request forgery protection
+What?
+- Links must be proteted https://site/action#abs6ajv...
+- Forms must be protected
+- All other POST/GET requests (thorugh XMLHttpRequests)
+
+**Pitfall:** Using double submit tokens   
+Keeping th eCSRF-token stored on the server is annoying. It is tempting to put them in a cookie:
+- Cookie:
+  - Csrf-Token=.......
+- Form-field:
+  - ```<input type="hidden name="token">......</input>```   
+But, this means that if the attacker can set a cookie for the domain, he can forge requests:
+- Subdomains can set cookies for the while domain
+- HTTP can set (but not read 'Secure') cookies for HTTPS
+
+**CSP - Content Security Policy**
+Policies set in the HTTP header:
+- Control which sources content are allowed to come from
+- Violations are reported back to the server
+
+## Recap - Web security
+- Same-origin policy
+- Cross-site scripting:
+  - Escaping (different contexts)
+  - Sanitizing HTML (use a good library)
+  - CSP
+- Cross-site request forgery
+  - what requests must be protected?
+- Cookie flags
+
