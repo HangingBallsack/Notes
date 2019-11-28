@@ -642,7 +642,8 @@ Policies set in the HTTP header:
   - Sanitizing HTML (use a good library)
   - CSP
 - Cross-site request forgery
-  - what requests must be protected?
+  - Add **anti-CSRF token** on any form
+  - Make sure that any authority-bearing token-cookies (such as session cookies) have the SameSite **flag** set to strict (or lax if GET requests do not have **any** side effects)
 - Cookie flags
 
 # <font color=red>Capability based security - 13</font>
@@ -859,3 +860,132 @@ In order to resond to an ongoing threat four things must happen:
 Security is important during development:
 - An attacker who can modify the source code can make his own back-doors
 - How can we trust third pary libraries and APIs?
+
+# <font color = red>Language based security - 16</font>
+An object is *immutable* if it cannot be changed after creation.   
+Example: String is an immutable class in Java.
+
+Why are strings immutable in Java?
+- Because of string interning:
+  - Every copy of a string is stored only once
+- Allows memorization of hashcodes (for say HashMap):
+  - Since the string doesn't change, we never have to recompute the hashcode
+- Thread safety
+- Security
+
+If you pas reference to a mutable object, you give permission to mutate the object.   
+If you receive a reference to a mutable object, you must accept that it mutates beyond your control
+
+- Passing a reference only gives "read access"
+- When receiving a reference you can safely test for invariants
+- Thread safety for free
+
+**Never Date in Java**   
+The Date class i mostrly deprecated and should never be used.   
+Use java.time.Instant - which is better *(and immutable)*
+
+The **final** keyword for variables mean:
+- The reference cannot be changed after initialisation
+- Any constructor must initialise the field
+- Declaring class final is **not** enough ot make it safe
+
+## The ```null``` reference
+null can mean:
+- No element was found (maps)
+- No parameter was present (getting parameters from HTTP requests)
+- This is a left value, when right is null in Either   
+Easy to forget null checks
+
+### NullPointerExceptions
+Oftens leads to unexpected control flow:
+- When the exceptions is "throws", execution races back up the stack.
+- Can be caught by catch (Exception ...) clauses
+- ... or crash the thread / program
+
+# <font color=red>Privacy: GDPR - 18</font>
+## Privacy, a human right?
+**Information privacy** refers to the ability of the individual to control their personal information
+
+Personal information is any information attachable to a specific (physical) person and includes:
+- Name and ID number
+- Birthdate and gender
+- Residence and locatoin
+- Healthcare records
+- Political information
+- Criminal records
+- ...
+
+
+Threats to privacy:
+- Collection of information
+  - Heatlth-care and other public sevices (example: NAV)
+  - School records
+  - Credit-card usage
+  - Traveling
+  - Surveilance cameras
+  - Internet browsing
+- Aggregation of information
+  - Combining different data bases (Example: Credit rating)
+  - De-anonymisation
+  - Security breaches
+  - Using data for a different purpose
+  - https://panopticlick.eff.org/ 
+- Dissemination of information
+  - Selling personal data to advertisers/ credit lenders/ employers
+  - Exposing emotinally important or taboo information about a subject (life experiences, nudity, private relationships ...)
+  - Exposing someone's personal information to encourage harrassment (doxing)
+  - ... or threatening to do so (blackmail)
+
+## Current law
+- EU directive:
+  - General Data Protection Regulation (GDPR)
+    - specifies:
+      - the **rights** of individuals
+      - the **obligations** of data processors
+    - Lawfulness
+      - Processing shall be lawful only if and to the extent that at least on of the following applies:
+        - give consent
+        - is necessary for a contract
+        - necessary for legal obligation
+        - necessary to protect vital interests
+        - necessary for public interest
+        - necessary for the purpose of legitimate interests
+    - Fairness
+      - Controllers ar obliged to protect the fundamenal rights of the data subject
+      - Automated decisions should be predictable
+    - Transparency
+      - Information about what is collected must be clearly stated where the data is collected
+- Norwegian law:
+  - Personopplysningsloven av 2018 incorporates GDPR into Norwegian law
+  - Datatilsynet is the Norwegian supervisory authority on privacy issues
+
+## GDPR: Rights of the individual
+- Right of access (art. 15)
+- Right to rectification (art. 16)
+- Right to erasure (art. 17)
+- Right to data restriction
+- Right to data portability (art. 20)
+- Right to object
+
+## Data breach
+In the case of a personal data breach, the controller shall (...)
+- not later than 72 hours after having become aware of it (...)
+- notiy the personal data breach to the supervisory authority
+
+## Tracking
+- Cookies and web-storage
+- HTML5 canvas finger printign
+- "
+- Like"- buttons (even without pressing it)
+- Web-beacons
+- Analytics software
+- Advertisement
+- Cross-device tracking (ultra-sonic tracking)
+
+## Anonymity vs Privacy
+The following are different:
+- Privacy (control over private information)
+- Anonymity (absense of identification)
+- Pseudonymity
+
+
