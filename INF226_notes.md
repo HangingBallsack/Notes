@@ -988,4 +988,21 @@ The following are different:
 - Anonymity (absense of identification)
 - Pseudonymity
 
+# <font color=red>Mobile security- 20</font>
+## Sandboxing:
+Android processes are separated using usual Linux mechanisms:
+- SELinux provides **Mandatory Access Control** (from v5.0)
+  - Each application runs in its own SELinux sandbox (from v9.0)
+- seccomp is used to **filter system calls* (from v8.0)
 
+
+## Encrypted storage
+Android (since v5.0) uses dm-crypt to encrypt the phone storage
+- dm-crypt is a whole disk encryption utility
+
+Provides **confidentiality** but **not integrity**
+
+## iOS
+Widely believed to be the msot secure mobile OS:
+- developed in-house from hardware to native applications
+- Heavy investment in security
