@@ -1,16 +1,12 @@
 # <font color = red>STRIDE and SQL Injection - 04</font>
-- **Spoofing**
-  - Transmissions with intentially mislabeled source
-- **Tampering**
-  - Modification of persistent data or data in transport
-- **Repudiation**
-  - Denial of having performed unauthorized operations, in systems where these operations cannot be traced
-- **Information disclosure**
-  - Access to data in an unathorized fasion
-- **Denial of Service**
-  - Rendering a service unaccessible to intended users
-- **Elevation of priviledge**
-  - Non-priviledged users gaining access to priviledged operations and data
+| S-T-R-I-D-E             | Description |
+| :------------------     | ----        |
+|Spoofing                 | Transmissions with intentially mislabeled source|
+|Tampering                | Modification of persistent data or data in transport|
+|Repudiation              | Denial of having performed unauthorized operations, in systems where these operations cannot be traced |
+|Information disclosure   | Access to data in an unathorized fasion |
+|Denial of Service        | Rendering a service unaccessible to intended users|
+|Elevation of priviledge  | Non-priviledged users gaining access to priviledged operations and data|
 
 ## **Trusting trust**
 - To trust a program after reading the source code *we must trust the compiler to compile correctly*
@@ -602,13 +598,13 @@ Solution: Set the Secure flag on the cookie to `True`
 ### The SameSite flag
 The SameSite flag has three possible values:
 
-| Flag       | Description |
-|:---        | :---------- | 
-|**none**   | The cookie is always sent|
-|**strict** | The cookie is only sent the request is initiated from the same origin
-|**lax**    |The cookie is still sent when followin links (GET requests) from other origins, but not with other requests (POST, DELETE, ...)
+| Flag        | Description               |
+|:-------     | :-------                  | 
+|**none**     | The cookie is always sent |
+|**strict**   | The cookie is only sent the request is initiated from the same origin
+|**lax**      | The cookie is still sent when followin links (GET requests) from other origins, but not with other requests (POST, DELETE, ...)
 
-Browser support for this flag is imporving, but CSRF tokens are still recommended
+Browser support for this flag is improving, but CSRF tokens are still recommended
 
 ### The HttpOnly flag
 In 2002, the most pupular way to exploit XSS was stealing the session token using JavaScript.   
