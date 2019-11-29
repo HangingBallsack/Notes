@@ -1,4 +1,57 @@
-# <font color = red>STRIDE and SQL Injection - 04</font>
+# Buffer overflow - 02
+## Buffer overread
+The simplest mistake one can make in an unsafe language is reading outside the bounds of a buffer (array).
+
+Example: The "Heartbleed" bug in libssl was caused by not bounds checking the TLS heart-beat signal before responding
+
+### The call stack
+The primary purpose of the call stack is to store return address for function calls:   
+When a function is called:
+- a return pointer is pushed on the stack
+
+When a function is done:
+- the return pointer is popped from the stack
+
+  ... and program flow is returned to the caller, following the return pointer
+
+## Return Oriented Programming
+Return Oriented Programming (ROP) is an exploit technique using preexisting code in the program or libraries intead of uploaded shell code
+
+## Mitigation
+How to prevent failure?
+- Writer better C code
+- Static analysis
+- Stack canaries
+  - A random integer value writter after the function return pointer on the stack.
+  - When the function returns the integer value is checked to detect if it has been overwritten since function call initiated
+- W^X
+  - Memory allocations can give the allocated memory different properties:
+    - Writable
+    - Executable
+  - W^X (write xor exectuable) means that the operating system enforces that writable memory cannot be executable
+- Address space layout randomisation
+  - Refers to the practise of randomising the layout when alocating memory in the system
+  - Purpose: Making it difficult for an attacker exploiting a buffer overflow to guess the location of function and libraries
+
+## Prevention
+Best practice to avoid buffer overflows:
+- Use memory safe languages
+- Use memory-safe abstractions in unsafe languages (say vectors or smart pointers in C++)
+- Use the compiler's abilities
+- Run static analysers to identify potential bugs
+
+## Memory safe languages
+Memory safe:
+- Java/C#
+- Most scripting lanugages (Python, JavaScript)
+- Most functional lanugages (Scheme, ML, Haskell)
+
+Not memory safe:
+- Assembly
+- C
+- C++
+
+# STRIDE and SQL Injection - 04
 | S-T-R-I-D-E             | Description |
 | :------------------     | ----        |
 |Spoofing                 | Transmissions with intentially mislabeled source|
@@ -121,7 +174,7 @@ It is good practise to **subscribe to advisories** of the vendors of your platfo
     - ...
   - will be able to tell you that your program crashes when given invalid UTF-8 strings (for example)
 
-# <font color = red>Access Control - 06</font>
+# Access Control - 06
 ## **Mandatory vs discretionary**
 In a *Mandatory Access Control (MAC)* system, the access control policies are fixed by a central authority
 in a *Discretionary Access Control (DAC)* system, a user who has access to an object can specify permissions for it or transfer access to another actor.
@@ -179,7 +232,7 @@ In a role based access control system, a set of roles abstract the permissions f
 ### Capability based access control
 Gidder ikke skrive mer om dette, kanskje senere :P :P :P 
 
-# <font color = red>OS and application security - 07</font>
+# OS and application security - 07
 ## **Operating systems**
 What is the role of the operating system?
 - Orchestrate processes (software).
@@ -263,7 +316,7 @@ Docker security can be decomposed into:
 
 ***A CONTAINER IS NOT A VM***
 
-# <font color = red>Privilege separation - 08</font>
+# Privilege separation - 08
 ## **Preventing privilege escalation**
 Typical sevice behaviour:
 - Accept requests from network (untrusted)
@@ -302,7 +355,7 @@ Privileged operations:
 
 Monitor does actons on the slaves behalf
 
-# <font color=red>Authentication - 09</font>
+# Authentication - 09
 ## **Passwords**
 ### Guidelines
 **The guidelines for passwords are:**
@@ -423,7 +476,7 @@ Requires:
 5. Server responds with a secure session ID
 6. Client program stores session ID as securely as possible
 
-# <font color = red> Web security: TLS and HTTPS - 10</font>
+# Web security: TLS and HTTPS - 10
 ## **The World Wide Web**
 **Communication on the www:**
 - Domain Name Service (DNS)
@@ -494,7 +547,7 @@ HTTP can be transmitted over TLS(HTTPS). Authentication provided by Certificate 
 - Same-origin protocol separates HTTP from HTTPS **(i.e HTTP =/= HTTPS)**
 - Many sites still serve content over plaintext HTTP
 
-# <font color = red>Cross site scripting - 11</font>
+# Cross site scripting - 11
 ## Same-origin policy
 An **origin** is a triple:
 - Protocol
@@ -588,7 +641,7 @@ Avoid stupid shit like dis:
   - Many BBCode implementaton do nothing to prevent XSS   
 - Notice: Even graphical formatting tools must represent the formatting in some waym abd can be just as vulnerable to XSS as code-based ones
 
-# <font color=red>CWE-352: Cross-Site Request Forgery (CSRF) - 12</font>
+# CWE-352: Cross-Site Request Forgery (CSRF) - 12
 ## Securing the session token
 Cookies are **not covered** by same origin policy by default:
 - Cookies from **https:**//example.com/ wil be sent to **http:**//example.com
@@ -656,7 +709,7 @@ Policies set in the HTTP header:
   - Make sure that any authority-bearing token-cookies (such as session cookies) have the SameSite **flag** set to strict (or lax if GET requests do not have **any** side effects)
 - Cookie flags
 
-# <font color=red>Capability based security - 13</font>
+# Capability based security - 13
 a **capability** (known in some systems as a **key**) is a communicable, unforgeable token of authority.
 
 A process/object/user/service/... should only have as much privilege as needed to perform their intended task.
@@ -731,7 +784,7 @@ A Capability is a unforgeable, transferrable token of authority
 - POSIX capabilities
 - Docker capabilities
 
-# <font color=red>Incorrect deserialisation - 14</font>
+# Incorrect deserialisation - 14
 ## Capsicum
 **Privilege separation**   
 Drawbacks:
@@ -773,7 +826,7 @@ Design:
   The code doing deserialization is at the forefront of the program security.   
 Bugs in deserialization can often lead to *remote code execution*.
 
-# <font color=red>Security through the software development cycle - 15</font>
+# Security through the software development cycle - 15
 **Software security** is the ability of software to function according to intentions in an **adverserial enviroment**
 
 *ASSUMPTIONS -> SECURITY MECHANISMS -> SECURITY REQUIREMENTS*
@@ -872,7 +925,7 @@ Security is important during development:
 - An attacker who can modify the source code can make his own back-doors
 - How can we trust third pary libraries and APIs?
 
-# <font color = red>Language based security - 16</font>
+# Language based security - 16
 An object is *immutable* if it cannot be changed after creation.   
 Example: String is an immutable class in Java.
 
@@ -914,7 +967,7 @@ Oftens leads to unexpected control flow:
 - Can be caught by `catch (Exception ...)` clauses
 - ... or crash the thread / program
 
-# <font color=red>Privacy: GDPR - 18</font>
+# Privacy: GDPR - 18
 ## Privacy, a human right?
 **Information privacy** refers to the ability of the individual to control their personal information
 
@@ -1000,7 +1053,7 @@ The following are different:
 - Anonymity (absense of identification)
 - Pseudonymity
 
-# <font color=red>Mobile security- 20</font>
+# Mobile security- 20
 ## Sandboxing:
 Android processes are separated using usual Linux mechanisms:
 - SELinux provides **Mandatory Access Control** (from v5.0)
