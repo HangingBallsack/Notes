@@ -2,11 +2,11 @@
 - **Spoofing**
   - Transmissions with intentially mislabeled source
 - **Tampering**
-  - Midification of persistent data or data in transport
+  - Modification of persistent data or data in transport
 - **Repudiation**
   - Denial of having performed unauthorized operations, in systems where these operations cannot be traced
 - **Information disclosure**
-  - Acces to daa in an unathorized fasion
+  - Access to data in an unathorized fasion
 - **Denial of Service**
   - Rendering a service unaccessible to intended users
 - **Elevation of priviledge**
@@ -14,7 +14,7 @@
 
 ## **Trusting trust**
 - To trust a program after reading the source code *we must trust the compiler to compile correctly*
-- To trust the compiler we can read the source code, but without trusting the compiler we cannt trust the resulting executable
+- To trust the compiler we can read the source code, but without trusting the compiler we cannot trust the resulting executable
 - *Conclusion:* To trust the compiler we must trust the compiler, which is circular
 
 ### Compiler bootstrapping
@@ -38,7 +38,7 @@ if(match("pattern of login")) {
 
 
 ### Diverse double compiling
-- For two programs, X and Y, are **functionally equivalent** if the output of X is the same as the output of Y when they are given the same input
+- For two programs, X and Y, are **functionally equivalent** if the output of X is the same as the output of Y when they are given the same input. But for example bubble sort and quicksort isn't the same.
 
 **Conclusions**
 - Should a "trusting trust" type attack be part of our threat model?
@@ -46,20 +46,21 @@ if(match("pattern of login")) {
 - Wheeler's diverse double-compiling strategy givesd guarantees under som assumptions
 
 ## **Vulnerabilities**
->*A **Vulerability** is a weakness in the computational logic found in software and some hardware components that, when exploited, results in a negative impact to confidentiality, integrity, OR availabiliy*
+*A **Vulerability** is a weakness in the computational logic found in software and some hardware components that, when exploited, results in a negative impact to confidentiality, integrity, OR availabiliy*
 
 ### Disclosure
 There is a spectrum of different stances:
->**No disclosure:** No details should be made public  
->**Coordinated disclosure:** Details can be disclosed after fixes made and embargo lifted  
->**Full-disclosure:** Full details should be publicly disclosed, and arguing against an embargo
+**No disclosure:** No details should be made public  
+**Coordinated disclosure:** Details can be disclosed after fixes made and embargo lifted  
+**Full-disclosure:** Full details should be publicly disclosed, and arguing against an embargo
 
 ### CVE
-*Common Vulnaribilities and Exposures* is a database of software vulnerabilities. Maintained by **The Mitre Corporations** in the USA
+*Common Vulnaribilities and Exposures* is a database of software vulnerabilities. Maintained by **The Mitre Corporations** in the USA.
+
 The list has entries consisting of:
-> A *unique number* (CVE-YYYY-XXXX) identifying the vulnerability  
-> A description  
-> At least one public reference
+- A *unique number* (CVE-YYYY-XXXX) identifying the vulnerability  
+- A description  
+- At least one public reference
 
 #### CVE number assignment
 - Assigning the CVE numbers is taken care of by the CVE Numbering Authorities (CNAs), which each have different scopes. These include:
@@ -80,6 +81,11 @@ The list has entries consisting of:
 **CVSS Example:**   
 <img src = img/CVSS.png width = 600></img>
 
+### CWE - Common Weakness Enumeration
+A category system for software weaknesses and vulnerabilities.
+
+Example: 
+- Category 121 is for stack-based buffer overflows
 
 #### NVD - National Vulnerability Database
 The national vulnerablity Database contains analysis of known vulnerabilities:
@@ -95,37 +101,37 @@ Software vedors often have separate security advisories, some examples:
 It is good practise to **subscribe to advisories** of the vendors of your platform
 
 ### Security Tools
-- **Static analysis:** inspects ```source code```
+- **Static analysis:** inspects `source code`
   - *Program flow analysis*
   - *Constraint analysis*
   - *Logic tests*
   - *Linting*
   - will be able to tell you that this code is illogical:
 
-``` Java
-boolean checked = false;
-if(checked){
-    //...
-}
-```
-- **Dynamic analysis**: inspecs the ```running software```
-  - *Fuzzer:* feeds random data to the program to trigger anomalies
-  - *Crawlers:* Maps out the attack surface of the program
-  - *Man-in-the-middle proxy:* analysis data from normal usage
+  ``` Java
+  boolean checked = false;
+  if(checked){
+      //...
+  }
+  ```
+- **Dynamic analysis**: inspects the `running software`
+  - *Fuzzer:* Feeds random data to the program to trigger anomalies.
+  - *Crawlers:* Maps out the attack surface of the program (spider).
+  - *Man-in-the-middle proxy:* Analysis data from normal usage.
   - *Vulnerability scans:*
     - SQL injection tests
     - XSS tests
     - Anti CSRF token detection
     - ...
-  - will be able to tell you that your program crashes whne given invalid UTF-8 strings (for example)
+  - will be able to tell you that your program crashes when given invalid UTF-8 strings (for example)
 
 # <font color = red>Access Control - 06</font>
 ## **Mandatory vs discretionary**
 In a *Mandatory Access Control (MAC)* system, the access control policies are fixed by a central authority
-in a *Discretionary Access Control (DAC)* system, a user who has access to an object can specify permissions for it or gtransfer access to another actor.
+in a *Discretionary Access Control (DAC)* system, a user who has access to an object can specify permissions for it or transfer access to another actor.
 
 ### Mandatory Access Control
-Modern operating systems have MAC(read; mandatory access control) on resources such as CPU, memory and storage.
+Modern operating systems have MAC (read; mandatory access control) on resources such as CPU, memory and storage.   
 In addition there are systems for introducing more MAC based security:
 - SELinux
 - Linux Security Modules (AppArmor)
@@ -148,8 +154,8 @@ Typical (but not always), the access control list specifies an owner of the obje
 
 **Example:**
 In Unix-like systems:
-- Subjects: processes
-- Objects: files, sockets, processes
+- Subjects: Processes
+- Objects: Files, sockets, processes
 
 Permissions are structured according to users and groups
 - User ID **(UID)**  
@@ -180,13 +186,13 @@ Gidder ikke skrive mer om dette, kanskje senere :P :P :P
 # <font color = red>OS and application security - 07</font>
 ## **Operating systems**
 What is the role of the operating system?
-- Orchestrate processes (software)
-- Priovide an abstract interface for hardware (drivers)
+- Orchestrate processes (software).
+- Provide an abstract interface for hardware (drivers).
 
 Programs can communicate with the OS through **system calls,** which interrupts the program and returns the control to the OS
 
-**OS level priviledge separation**
-On the OS level individual processes have different protection for different resources:
+**OS level priviledge separation**   
+On the OS level, individual processes have different protection for different resources:
 - Memory:
    - Virtual memory mapping
    - Limits
@@ -204,15 +210,15 @@ On the OS level individual processes have different protection for different res
 **Virtual memory mapping**
 
 - Each program gets their own virtual address space
-- memory location not decided at compile time
-- memory fragmentation hidden from programs
-- easy to page out to swap (store memoty on hard drive)  
+- Memory location not decided at compile time
+- Memory fragmentation hidden from programs
+- Easy to page out to swap (store memoty on hard drive)  
 
-But, as a consequence: processes cannot directly address or access the memory of other processes
+But, as a consequence: Processes cannot directly address or access the memory of other processes
 
 Exceptions:
 1. Processes can allocate shared memory
-2. A process can attach themselces as a debugger to another process  
+2. A process can attach themselves as a debugger to another process  
    - Number 2 is allowed by default in Linux for processes with the same UID 
 
 ## **File system abstraction**
@@ -220,23 +226,23 @@ Exceptions:
 The *unix* file system provides a unified way to access file systems based in the **root directory /**
 
 Directories group the files into logical parts:
-- /bin:     programs
-- /sbin:    administrative programs
-- /etc:     system configuration
-- /dev:     virtual file system of devices
-- /home:    individul user's home folders
-- /tmp:     temporary files
+- `/bin`:     programs
+- `/sbin`:    administrative programs
+- `/etc`:     system configuration
+- `/dev`:     virtual file system of devices
+- `/home`:    individul user's home folders
+- `/tmp`:     temporary files
 - ...
 
 ### Chroot
 The operating system can restrict process file access by **changing the root dir to a different directory**
 - **Example:** After chroot /home/bar the path /bin/foo translates to /home/bar/bin/foo
 - **Note:** a UID=0 (root) process easily access resources outside the new root,
-This provides a form of file system virtualisation
+this provides a form of file system virtualisation
 
 Usefulness of chroot is limited by the restriction that only root can do it.
 - Imagine that a user could set up a root folder with a forged /etc/passwd and /etc/shadow
-- Then they could fool a SUID program (such as su) to give them  UID=0 shel
+- Then they could fool a SUID program (such as su) to give them UID=0 shell
 
 ## **OS virtualisation**
 **Docker:** 
@@ -262,7 +268,7 @@ Docker security can be decomposed into:
 ***A CONTAINER IS NOT A VM***
 
 # <font color = red>Privilege separation - 08</font>
-## **Preventing privilede escalation**
+## **Preventing privilege escalation**
 Typical sevice behaviour:
 - Accept requests from network (untrusted)
 - Authenticate user
@@ -275,6 +281,7 @@ Monitor:
 - Provides an interface for slave to perform privildged operations
 - Validates the requests to perform operations
 - Finite state machine
+
 Slave:
 - Unprivileged
 - Does most of the work
@@ -285,12 +292,12 @@ Slave:
 
 **Benefits:**
 - Without further holes in the monitor, RCE vulnerabilites are confined to the slave
-- Bugs in unprivileged part will ideally only result in denial of service for the mesbehaving client
+- Bugs in unprivileged part will ideally only result in denial of service for the misbehaving client
 - More intense scrutiny can be given to privileged parts
-- Simplifying the privileged part makes reasong about its security easier
+- Simplifying the privileged part makes reasoning about its security easier
 
 ## **Implementing the monitor/slave pattern**
-Priveleged operations:
+Privileged operations:
 - File access
 - accessing cryptographic keys
 - database access
@@ -302,24 +309,24 @@ Monitor does actons on the slaves behalf
 # <font color=red>Authentication - 09</font>
 ## **Passwords**
 ### Guidelines
-The guidelines for passwords are:
+**The guidelines for passwords are:**
 - Requre a minimum password length
-- The minimm length requirements myst be 8 characters or greater
+- The minimm length requirements must be 8 characters or greater
 - Allow at least 64 characters
 - check against a list of known bad passwords. For instance:
    - Dictionary words
    - Repetitive or sequential characters (aaaaa123, 1234abcd)
-   - Context-specific words, such as for Facebook the password "Facebook123"
+   - Context-specific words, such as for Facebook, the password "Facebook123"
    - Passwords obtained form previous breach corpuses   
 
 
-Structure of user authentication scheme based on passwords:
+**Structure of user authentication scheme based on passwords:**
 1. Provide a way for user to authenticate server (HTTPS)
 2. Establish a secure communication channel (HTTPS)
 3. User transmits password
 4. Server verifies password:
    1. Salted (128 bits)
-   2. Run through an expensive key derivation funxtion (ex. SCrypt)
+   2. Run through an expensive key derivation function (ex. SCrypt)
 5. Server respons with a secure session ID
 6. Client program stores session ID as securely as possible
 
@@ -329,7 +336,7 @@ Structure of user authentication scheme based on passwords:
 > foobat→c7f0f45765b...
 
 Requirements of a cryptographic hash function:
-- **One way:** Gien y, difficult to find x such that h(x) = y
+- **One way:** Given y, difficult to find x such that h(x) = y
 - **Collision free:** Difficult to find x and x' such that h(x) = h(x')
 - A small change in input yield a large difference in output
 - quick to compute  
@@ -346,15 +353,15 @@ Requirements of a cryptographic hash function:
 Rainbow tables refer to a time-space-tradeoff when creating a **lookup table for hash values -> plaintext**
 
 #### Salting
-Efficient solution to make rainbow tables/ hash dictionaries infeasible instead of storing ```h(x)```, generate random byte-string s and store ```s, h(h(x)⊕s)```
+Efficient solution to make rainbow tables/ hash dictionaries infeasible instead of storing `h(x)`, generate random byte-string s and store `s, h(h(x)⊕s)`
 
-**How much salt?**
+**How much salt?**   
 UNIX-like systems use 128-bits salts.  
 Salting does not help against a brute-force attack on a single password
 
 
 ## **Two-factor authentication**
-- SMS codes (Considered insecure: Example Reddit developers hacked via SMS intercept)
+- SMS codes (Considered insecure: Reddit developers hacked via SMS intercept)
 - Print-out with one-time codes
 - A device with time-based, one-time passwords (TOTP)
 - Approval from an already authenticated device (Example: Keybase)
@@ -386,7 +393,7 @@ Assumption: We trust a central authority to verify public keys for us
 Mechanism: Central authority verifies identity and issues certificates on public keys  
 Examples:
   - Browsers ship with a list of public keys of trusted Certificate Athorities
-  - Organisations can disgtribute their own certificates for internal use
+  - Organisations can distribute their own certificates for internal use
 
 ### Logged in
 How do we ensure that each request comes from a valid logged in user?
@@ -401,11 +408,12 @@ Example:
       - User requests a message deleted
      - **How can the server know the user is the same?**  
 
-The standard way solution is to use **session ID**, which identifies the suer in the following session.  
-Requires:  
+The standard way solution is to use **session ID**, which identifies the user in the following session.  
+
+Requires:
 - Entropy: Session ID must not be guessable (random, 128 bits)
 - Secrecy: Session ID must not be leaked:
-   - HTTPS
+  - HTTPS
   - Debugging modes often leak session IDs
   - Cross-Site-Scripting (Cookies: HttpOnly, SameSite)
 
@@ -421,12 +429,12 @@ Requires:
 
 # <font color = red> Web security: TLS and HTTPS - 10</font>
 ## **The World Wide Web**
-Communication on the www:
+**Communication on the www:**
 - Domain Name Service (DNS)
 - Hyper Text Transfer Protocol (HTTP)
 - Uniform Resource Identifier (URI)
 
-Web-servers respond to HTTP requests
+**Web-servers respond to HTTP requests**
 - Static websites vs dynamic web sites
 - Dynamic: Any language can be used on the server side
 
@@ -456,7 +464,7 @@ Protects agains:
 - User accepting a bad certificate
 - Downgrade to plaintext HTTP
 - Old HTTP bookmarks   
-**Note:** if your domain is on the preload lsit, you cannot change back to HTTP - clients will no longer accept it
+**Note:** if your domain is on the preload list, you cannot change back to HTTP - clients will no longer accept it
 
 
 ## **Stream ciphers and Message Authentication Codes**
@@ -477,16 +485,17 @@ BUT: They are malleable!
 - Provides:
   - Confidentiality
   - Authentication (Via X.509 certificates)
-  - Forward secrecy   
-If you need cryptographic transport security: use TLS 1.3   
+  - Forward secrecy
+
+  If you need cryptographic transport security: use TLS 1.3
 
 TLS version 1.3 has reduced the number of supported ciphers:
 - AES in counter mode and CBC-MAC
 - ChaCha20 and Poly1305 MAC   
 
 #### HTTPS
-HTTP can be transmitted over TLS(HTTPS). Authentication priveded by Certificate Authorities (such as Let's Encrypt):
-- Same-origin protocol separates HTTP from HTTPS (i.e HTTP =/= HTTPS)
+HTTP can be transmitted over TLS(HTTPS). Authentication provided by Certificate Authorities (such as Let's Encrypt):
+- Same-origin protocol separates HTTP from HTTPS **(i.e HTTP =/= HTTPS)**
 - Many sites still serve content over plaintext HTTP
 
 # <font color = red>Cross site scripting - 11</font>
@@ -501,17 +510,16 @@ Example: https://uib.no/ gives:
 - Hostname: www.uib.no
 - Port number: 443   
 
-The **same-origin policy** restricts scripts run in the browser to only *access reoucres from the same origin*.   
+The **same-origin policy** restricts scripts run in the browser to only *access resources from the same origin*.   
 Example: A script can only access cookies from the same origin   
-
-The following URLs have the same origin:
-- http://geocities.com/bob/index.html
-- http://geocities.com/eve/script.html   
+- The following URLs have the same origin:
+  - http://geocities.com/bob/index.html
+  - http://geocities.com/eve/script.html   
 
 ## Cross-site scripting
 Web browser insulate resources, such as cookies or JavaScript, from different origins.   
-*Cross-site scripting** (XSS) occurs when a web-server unintentionally servs JavaScript from an attacker to client browsers.   
-This allows attacker code to acces reouces from victim server origin   
+*Cross-site scripting* (XSS) occurs when a web-server unintentionally serves JavaScript from an attacker to client browsers.   
+This allows attacker code to access resources from victim server origin   
 
 Example:   
 ```JavaScript
@@ -547,7 +555,7 @@ This means that once an attacker has injected a script, he can do anything the u
 - Client side checking is easy to circumvent
 
 ### Escaping output
-For a string placed inside an HTML element (```<div>DATA</div>```), we can do the following:
+For a string placed inside an HTML element (`<div>DATA</div>`), we can do the following:
 - & -> \&amp;
 - < -> \&lt;
 - \> -> \&gt;
@@ -557,13 +565,13 @@ For a string placed inside an HTML element (```<div>DATA</div>```), we can do th
 
 ### The DON'Ts
 Avoid inserting untrusted data in tag names   
-```<NEVER PUT UNTRUSTED DATA HERE... href="/test" />```
+`<NEVER PUT UNTRUSTED DATA HERE... href="/test" />`
 
 Avoid inserting untrusted data in attribute names   
-```<div ... NEVER PUT UNTRUSTED DATA HERE ... =test />```
+`<div ... NEVER PUT UNTRUSTED DATA HERE ... =test />`
 
 Avoid inserting utrusted data in scripts   
-```<script> ... NEVER PUT UNTRUSTED DATA HERE ... </script>```
+`<script> ... NEVER PUT UNTRUSTED DATA HERE ... </script>`
 
 Avoid inserting untrusted data directly in CSS   
 ``` CSS
@@ -573,13 +581,13 @@ Avoid inserting untrusted data directly in CSS
 ```
 
 Avoid stupid shit like dis:   
-- ```{ background-url : "javascript:alert(1)"; }```
-- ```{ text-size: "expression(alert("XSS"))"; }```
+- `{ background-url : "javascript:alert(1)"; }`
+- `{ text-size: "expression(alert("XSS"))"; }`
 
 
 ### The DOs
 - HTML sanitisers (Example OWASP AntiSamy project)
-- Using another markup language (Markdiwbm BBCode) with safe conversion to HTML
+- Using another markup language (Markdown BBCode) with safe conversion to HTML
   - Markdown allows literal HTML, which must be sanitized
   - Many BBCode implementaton do nothing to prevent XSS   
 - Notice: Even graphical formatting tools must represent the formatting in some waym abd can be just as vulnerable to XSS as code-based ones
@@ -587,18 +595,22 @@ Avoid stupid shit like dis:
 # <font color=red>CWE-352: Cross-Site Request Forgery (CSRF) - 12</font>
 ## Securing the session token
 Cookies are **not covered** by same origin policy by default:
-- Cookies from **https:**//example.com/ wil be sent to **http:**//example.com  
-Solution: Set the Secure flag on the cookie to ```True```
+- Cookies from **https:**//example.com/ wil be sent to **http:**//example.com
+
+Solution: Set the Secure flag on the cookie to `True`
 
 ### The SameSite flag
 The SameSite flag has three possible values:
-- **none:** the cookie is always sent:
-- **strict:** the cookie is only sent the request is initiated from the same origin
-- **lax:** the cookie is still sent when followin links (GET requests) from other origins, but not with other requests (POST, DELETE, ...)   
+| Flag       | Description |
+| ---        | ----------- | 
+|**none:**   | The cookie is always sent|
+|**strict:** | The cookie is only sent the request is initiated from the same origin
+|**lax:**    |The cookie is still sent when followin links (GET requests) from other origins, but not with other requests (POST, DELETE, ...)
+
 Browser support for this flag is imporving, but CSRF tokens are still recommended
 
 ### The HttpOnly flag
-In 2002, the most pupular way to exploit XSS was wstealing the session token using JavaScript.   
+In 2002, the most pupular way to exploit XSS was stealing the session token using JavaScript.   
 The HttpOnly flag for cookies indicates to browsers that the cookie:
 - should only be sent in the HTTP-header
 - should not be available to scripts
@@ -618,15 +630,16 @@ What?
 - Forms must be protected
 - All other POST/GET requests (thorugh XMLHttpRequests)
 
-**Pitfall:** Using double submit tokens   
-Keeping th eCSRF-token stored on the server is annoying. It is tempting to put them in a cookie:
+**Pitfall:** Using double submit tokens
+
+Keeping the CSRF-token stored on the server is annoying. It is tempting to put them in a cookie:
 - Cookie:
   - Csrf-Token=.......
 - Form-field:
-  - ```<input type="hidden name="token">......</input>```
+  - `<input type="hidden name="token">......</input>`
 
 But, this means that if the attacker can set a cookie for the domain, he can forge requests:
-- Subdomains can set cookies for the while domain
+- Subdomains can set cookies for the whole domain
 - HTTP can set (but not read 'Secure') cookies for HTTPS
 
 **CSP - Content Security Policy**
@@ -647,19 +660,19 @@ Policies set in the HTTP header:
 - Cookie flags
 
 # <font color=red>Capability based security - 13</font>
-a **capability** (known in some systems as a **key**) is a communicable, unforgeable token of authority
+a **capability** (known in some systems as a **key**) is a communicable, unforgeable token of authority.
 
-A process/object/user/service/... should only have as much privilege as needed to perform their intended task
+A process/object/user/service/... should only have as much privilege as needed to perform their intended task.
 
 A *capability* consists of:
-- a Reference to an object
+- A reference to an object
 - A set of permissinos for that object
 
 A capability is used **whenever a resource is accessed.**
 
 **Example:** read(capability):   
-- Reads rom the object pointed to by capability
-- if capability allows reading
+- Reads from the object pointed to by capability
+  - If capability allows reading
 
 ## Using capabilities
 Restricting access to programs:
@@ -672,7 +685,7 @@ Restricting access to programs:
 This allows very fine grained applicatinos of the principle of least privilege
 
 ### Unforgeable
-If a capability can be forged, it is useless as a securit measure.   
+If a capability can be forged, it is useless as a security measure.   
 Two approaches to unforgeability:
 - Enforced by supervisor (operating systems, virtual machine, compiler, ...)
   - In an OS, the kernel can keep a **table of capabilities** for each process
@@ -690,7 +703,7 @@ Two approaches to unforgeability:
 A memory safe **object capability system** can be obtained by:
 - **Endowment**: Alice might have intrinsic capabilities given to her at her creation
 - **creation**: Alice gets capability to access an object she creates
-- **introduction**: Alice transfers a capability to Bib
+- **introduction**: Alice transfers a capability to Bob
 
 This approach **relies on the memory safety** of the language.
 
@@ -701,7 +714,7 @@ Example:
   - Read balance R
 - Attenuation:
   - Alice wants Bob to transfer her some money
-  - Alice has a (D,W,R) capability to her own account
+  - Alice has a (D, W, R) capability to her own account
   - Alice creates a new (D) capability to her account and transfers it to Bob
 
 The creater of a capability should be able to revoke it.
@@ -713,7 +726,7 @@ CSRF-tokens can be viewed as capabilities:
 ### Capabilities summary
 A capability consists of:
 - A **reference** to an object
-- A seet of **permissions** for that object
+- A set of **permissions** for that object
 
 A Capability is a unforgeable, transferrable token of authority
 
@@ -726,15 +739,15 @@ A Capability is a unforgeable, transferrable token of authority
 **Privilege separation**   
 Drawbacks:
 - Chroot requires UID 0
-- When transitioning between privileges data must be serialised
+- When transitioning between privileges, data must be serialised
 - Relies on shared memory
-- Resoning about securit requires modelling monitor as a state machine
+- Reasoning about security requires modelling monitor as a state machine
 - Does not limit network access rom slave
 
 **Capsicum**   
 Design:
 - Introduces a special **capability mode** for processes
-- Provide **new kernel primitives** (cap_enter, cap_new, ...)
+- Provide **new kernel primitives** (`cap_enter`, `cap_new`, ...)
 - Changes existing kernel primitives when in capability mode
 - **Userspace library** (libcapsicum).   
 
@@ -742,7 +755,7 @@ Design:
 
 - In capsicum, **capabilities are file descriptors** along with a set of acess rights
   - there are about 60 possible access rights for a capability in capsicum
-- A capability is created throguh cap_new by giving it a file descriptor and rights mask
+- A capability is created throguh `cap_new` by giving it a file descriptor and rights mask
   - Capabilities are transferred through Inter Process Communication (IPC) channels, such as sockets.
 
 .
@@ -758,8 +771,9 @@ Design:
 - JSON (Multiple language support)
 - Pickle (Python)
 - Protocol buffers
-**Deserialization** is the process of turning these byte arrays back into objects.   
-The code doing deserialization is at the forefront of the program security.   
+**Deserialization** is the process of turning these byte arrays back into objects.
+
+  The code doing deserialization is at the forefront of the program security.   
 Bugs in deserialization can often lead to *remote code execution*.
 
 # <font color=red>Security through the software development cycle - 15</font>
@@ -767,7 +781,7 @@ Bugs in deserialization can often lead to *remote code execution*.
 
 *ASSUMPTIONS -> SECURITY MECHANISMS -> SECURITY REQUIREMENTS*
 
-1. **Identify security requirements** which capture the intetions for the software.
+1. **Identify security requirements** which capture the intentions for the software.
 2. **Make explicit the assumptions** about the enviroment the software will run.
 3. **Design mechanisms** which satisfy the requirements given the assumptions
 
@@ -784,12 +798,12 @@ Causes for downtime:
 - Exessive usage (exhaustion of scarse resources: CPU/GPU etc)
 
 ### Capacity
-**Capacity** refers to the maximum number simultaneous of users/transactions.
+**Capacity** refers to the maximum number of simultaneous users/transactions.
 
 ### Scalability
 **Scalability** is the ability to increase capacity
 
-What are the bottle-nexks?
+What are the bottle-necks?
 
 Running multiple instances:
 - Load balancing (DNS round-robin)
@@ -821,10 +835,10 @@ Increasing software efficiency gives a better performance/hardware requirement
 - Documentation
 
 ## Recoverability
-**Recoverability** is the *time to recover from distruptive events*
+**Recoverability** is the *time to recover from distruptive events*.
 
 ### Cohesion
-**Cohesion** is the degree to which parts of a system / module belong together
+**Cohesion** is the degree to which parts of a system / module belong together.
 
 Strong cohesion: Each module is **robust** and **reusable**   
 Contrast with **coupling**, the interdependency wetween modules
@@ -856,7 +870,7 @@ In order to resond to an ongoing threat four things must happen:
 3. Monitoring
 4. Response
 
-## Securing development and deplayment
+## Securing development and deployment
 Security is important during development:
 - An attacker who can modify the source code can make his own back-doors
 - How can we trust third pary libraries and APIs?
@@ -873,33 +887,34 @@ Why are strings immutable in Java?
 - Thread safety
 - Security
 
-If you pas reference to a mutable object, you give permission to mutate the object.   
-If you receive a reference to a mutable object, you must accept that it mutates beyond your control
+If you pass reference to a mutable object, you give permission to mutate the object.   
+If you receive a reference to a mutable object, you must accept that it mutates beyond your control.
 
 - Passing a reference only gives "read access"
 - When receiving a reference you can safely test for invariants
 - Thread safety for free
 
 **Never Date in Java**   
-The Date class i mostrly deprecated and should never be used.   
-Use java.time.Instant - which is better *(and immutable)*
+The Date class i mostly deprecated and should never be used.   
+Use `java.time.Instant` - which is better *(and immutable)*
 
 The **final** keyword for variables mean:
 - The reference cannot be changed after initialisation
 - Any constructor must initialise the field
-- Declaring class final is **not** enough ot make it safe
+- Declaring class final is **not** enough to make it safe
 
-## The ```null``` reference
-null can mean:
+## The `null` reference
+`null` can mean:
 - No element was found (maps)
 - No parameter was present (getting parameters from HTTP requests)
-- This is a left value, when right is null in Either   
-Easy to forget null checks
+- This is a left value, when right is null in Either
 
-### NullPointerExceptions
+  Easy to forget null checks
+
+### `NullPointerExceptions`
 Oftens leads to unexpected control flow:
-- When the exceptions is "throws", execution races back up the stack.
-- Can be caught by catch (Exception ...) clauses
+- When the exceptions is "`throws`", execution races back up the stack.
+- Can be caught by `catch (Exception ...)` clauses
 - ... or crash the thread / program
 
 # <font color=red>Privacy: GDPR - 18</font>
@@ -916,13 +931,13 @@ Personal information is any information attachable to a specific (physical) pers
 - ...
 
 
-Threats to privacy:
+**Threats to privacy:**
 - Collection of information
   - Heatlth-care and other public sevices (example: NAV)
   - School records
   - Credit-card usage
   - Traveling
-  - Surveilance cameras
+  - Surveillance cameras
   - Internet browsing
 - Aggregation of information
   - Combining different data bases (Example: Credit rating)
@@ -932,9 +947,10 @@ Threats to privacy:
   - https://panopticlick.eff.org/ 
 - Dissemination of information
   - Selling personal data to advertisers/ credit lenders/ employers
-  - Exposing emotinally important or taboo information about a subject (life experiences, nudity, private relationships ...)
+  - Exposing emotionally important or taboo information about a subject (life experiences, nudity, private relationships ...)
   - Exposing someone's personal information to encourage harrassment (doxing)
-  - ... or threatening to do so (blackmail)
+
+    ... or threatening to do so (blackmail)
 
 ## Current law
 - EU directive:
@@ -945,13 +961,13 @@ Threats to privacy:
     - Lawfulness
       - Processing shall be lawful only if and to the extent that at least on of the following applies:
         - give consent
-        - is necessary for a contract
+        - necessary for a contract
         - necessary for legal obligation
         - necessary to protect vital interests
         - necessary for public interest
         - necessary for the purpose of legitimate interests
     - Fairness
-      - Controllers ar obliged to protect the fundamenal rights of the data subject
+      - Controllers are obliged to protect the fundamental rights of the data subject
       - Automated decisions should be predictable
     - Transparency
       - Information about what is collected must be clearly stated where the data is collected
@@ -970,13 +986,12 @@ Threats to privacy:
 ## Data breach
 In the case of a personal data breach, the controller shall (...)
 - not later than 72 hours after having become aware of it (...)
-- notiy the personal data breach to the supervisory authority
+- notify the personal data breach to the supervisory authority
 
 ## Tracking
 - Cookies and web-storage
-- HTML5 canvas finger printign
-- "
-- Like"- buttons (even without pressing it)
+- HTML5 canvas finger printing
+- "Like"-buttons (even without pressing it)
 - Web-beacons
 - Analytics software
 - Advertisement
@@ -1003,6 +1018,6 @@ Android (since v5.0) uses dm-crypt to encrypt the phone storage
 Provides **confidentiality** but **not integrity**
 
 ## iOS
-Widely believed to be the msot secure mobile OS:
+Widely believed to be the most secure mobile OS:
 - developed in-house from hardware to native applications
 - Heavy investment in security
