@@ -603,10 +603,10 @@ Solution: Set the Secure flag on the cookie to `True`
 The SameSite flag has three possible values:
 
 | Flag       | Description |
-| ---        | ----------- | 
-|**none:**   | The cookie is always sent|
-|**strict:** | The cookie is only sent the request is initiated from the same origin
-|**lax:**    |The cookie is still sent when followin links (GET requests) from other origins, but not with other requests (POST, DELETE, ...)
+|:---        | :---------- | 
+|**none**   | The cookie is always sent|
+|**strict** | The cookie is only sent the request is initiated from the same origin
+|**lax**    |The cookie is still sent when followin links (GET requests) from other origins, but not with other requests (POST, DELETE, ...)
 
 Browser support for this flag is imporving, but CSRF tokens are still recommended
 
