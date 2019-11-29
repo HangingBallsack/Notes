@@ -601,6 +601,7 @@ Solution: Set the Secure flag on the cookie to `True`
 
 ### The SameSite flag
 The SameSite flag has three possible values:
+
 | Flag       | Description |
 | ---        | ----------- | 
 |**none:**   | The cookie is always sent|
