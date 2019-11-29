@@ -18,7 +18,7 @@
   - r har ingen prefix (ikke noe navn etc, kun verdi)
   - går fra -1 til +1  
   - korrelasjonskoeffisienten er et mål på retning og styrke av et forhold, kalkulert med **standardavvik** og **gjennomsnitt** av både **x** og **y**   
-<img src="./r.png" width = 200></img>
+<img src="img/r.png" width = 200></img>
 
 - # Minste kvadratsums regresjon (/metode)
   - Regresjonslinje
@@ -32,7 +32,7 @@
     - Modell:       y = a + bx + "målefeil"
       - x = foklaringsvariabel  =   Vekt kjøtteter
       - y = respons             =   Antall  
-<img src="./reg.png" width = 250></img>
+<img src="img/reg.png" width = 250></img>
 
   - **Metode:** formler for "a" og "b"
   - $min_a,_b\sum (y_i-(a+bx_i)) = \sum(error_i)^2$
@@ -54,9 +54,9 @@
     - = avstanden mellom observert og predikert verdi
     - Residualen er avstanden mellom y-observert og y-predikert. Vi plotter dem i et residualplott
     - Dersom data er tilfeldig spredt rundt 0 er antakelsen om en lineær modell mest trolig OK, og du hadde neppe uteliggere   
-<img src ="./residual.png" width = 350> </img>
+<img src ="img/residual.png" width = 350>
 
-      <img src ="./lm.png" width = 500> </img>
+      <img src ="img/lm.png" width = 500>
 
     - Formuler regresjonsmodellen over og bruk S-Plus utskriften til å finne parameterestimater.
       - **Fasit:**
@@ -102,4 +102,12 @@
   - 2:
     - $P(U)=P(U|K)*P(K)+P(U|M)*P(M)=0.50*0.60+0.25*0.4=0.4=40\%$  
   
-    <img src=skole.png width=500></img>
+    <img src=img/skole.png width=500>
+
+## Diskrete fordelinger
+### Binomisk fordeling 
+$E=(X)=np$
+
+$Var(X)=np(1-p)$
+
+$P(X=x)=(\frac{n}{x})p^x(1-p)^{n-x}$
