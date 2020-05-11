@@ -113,3 +113,72 @@
     - ```SELECT * FROM Keramikk WHERE Antall < 5 ```
 
 # Relasjonsmodellen og relasjonsalgebra
+TODO: fyll inn
+
+# Datamodellering og databasedesign
+## E/R diagram
+- En "svak identitet" er en entitet som ikke kan bli identifisert av kun attributtene, og må bruke en fremmednøkkel sammen med attributene for å skape en primærnøkkel.
+- E/R diagrammer bør ikke ha fremmednøkler fordi ER er ikke det samme som relations-diagram hvor de som oftest er representert. E/R diagram har streker med egenskaper mellom seg som presenterer nøkler
+- ```Subtype```: spesialisering av en annen entitet.
+  - Arver egenskapene til supertypen, kan ha ekstra attributter
+  - ```Kjøretøy = Personbil og/eller Lastebil ```
+    - Personbil og lastebil er subtyper av kjøretøy
+
+## Normalisering
+|Begrep |Betydning  |
+|:---   |:--        |
+| Funksjonell avhengighet |X bestemmer Y; ```AnsNR bestemmmer Etternavn, AnsNr bestemmer PostNr``` |
+|Supernøkkel              |En eller flere data som definerer en rad |
+|Kandidatnøkkel           |Minimal supernøkkel; hvis man fjerner noen attributter er det ikke en supernøkkel |
+|Primærnøkkel             |Spesielt utvalgt kandidatnøkkel, alle relasjoner skal ha en og bare en primærnøkkel
+|Oppdateringsanomali      |Anomali som oppstår når man endrer opplysninger om noe som er lagret flere steder
+|Normaliseringssteg       |Et steg i å designe en tabell slik at man minimerer duplisering av informasjon, som gjør det lettere å gjøre databasen konsistent |
+|Tapsfri dekomposisjon    |Natural join vil aldri gi opphav til falske tupler|
+|Partielle avhengighet    |Ett eller flere attributter er avhengig av kun deler av primærnøkkelen |
+|Transitiv avhengighet    |Et attributt er avhengig av et annet ikke-primærnøkkel-attributt|
+
+1NF: 
+|Name |Address |Movies rented | Salutation |
+|:--|:--|:--|:--|
+|Janet jones |First street |pirates of the |Ms.|
+|Janet jones |First street |clash of the titans|Ms.|
+|Robert phil |3rd street 34 |Forgetting sarah |Mr.|
+|Robert phil |3rd street 34 |Daddys little girls |Mr.|
+|Robert phil |5th avenue | clash of the titans|Mr.|
+
+2NF: 
+|Membership ID |Full name |address | Salutation |
+|:--|:--|:--|:--|
+|1 |Janet jones |First street  |Ms.|
+|2 |Robert phil |3rd street 34|Mr.|
+|3 |Robert phil |5th avenue |Mr.|
+
+|Membership ID |Movies rented |
+|:--|:--|
+|1 |Pirates |
+|1 |Clash of the titans |
+|2 |Forgetting sarah |
+|2 | Daddys little girls|
+|3 | Clash of the titants|
+
+3NF: 
+|Membership ID |Full name |address | Salutation |
+|:--|:--|:--|:--|
+|1 |Janet jones |First street  |2|
+|2 |Robert phil |3rd street 34|1|
+|3 |Robert phil |5th avenue |1|
+
+|Membership ID |Movies rented |
+|:--|:--|
+|1 |Pirates |
+|1 |Clash of the titans |
+|2 |Forgetting sarah |
+|2 | Daddys little girls|
+|3 | Clash of the titants|
+
+|Salutation ID |Salutation |
+|:--|:--|
+|1 |Mr. |
+|2 |Ms. |
+|3 |Mrs. |
+|4 |Dr. |
