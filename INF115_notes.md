@@ -137,7 +137,7 @@ TODO: fyll inn
 |Partielle avhengighet    |Ett eller flere attributter er avhengig av kun deler av primærnøkkelen |
 |Transitiv avhengighet    |Et attributt er avhengig av et annet ikke-primærnøkkel-attributt|
 
-1NF: 
+#### 1NF:
 |Name |Address |Movies rented | Salutation |
 |:--|:--|:--|:--|
 |Janet jones |First street |pirates of the |Ms.|
@@ -146,7 +146,7 @@ TODO: fyll inn
 |Robert phil |3rd street 34 |Daddys little girls |Mr.|
 |Robert phil |5th avenue | clash of the titans|Mr.|
 
-2NF: 
+#### 2NF: 
 |Membership ID |Full name |address | Salutation |
 |:--|:--|:--|:--|
 |1 |Janet jones |First street  |Ms.|
@@ -161,7 +161,7 @@ TODO: fyll inn
 |2 | Daddys little girls|
 |3 | Clash of the titants|
 
-3NF: 
+#### 3NF: 
 |Membership ID |Full name |address | Salutation |
 |:--|:--|:--|:--|
 |1 |Janet jones |First street  |2|
