@@ -190,6 +190,7 @@ TODO: fyll inn
 - En *post* består av en mengde bytes som lagres på en blokk
   - Har Posthode, postskjemaer
 <img src=img/post.png width=500>
+
 - Hashing er å kartlegge data til verdier som er fikserte
 - Hashing er ikke til hjelp når det kommer til å f.eks søke etter URL strenger i databaser
 - Primærindeks er en indeks på primærnøkkelen til en tabell, som at Ansatt ID kan være et eksempel på
