@@ -182,3 +182,50 @@ TODO: fyll inn
 |2 |Ms. |
 |3 |Mrs. |
 |4 |Dr. |
+
+## Fysiske databasedesign
+- En ```blokk``` er den minste enheten for overføring av data mellom minnet og ytre lager.
+  - Typisk blokkstørrelse på 4KB (4096 bytes)
+  - inneholder som regel mange *poster* (rader)
+- En *post* består av en mengde bytes som lagres på en blokk
+  - Har Posthode, postskjemaer
+<img src=img/post.png width=500>
+- Hashing er å kartlegge data til verdier som er fikserte
+- Hashing er ikke til hjelp når det kommer til å f.eks søke etter URL strenger i databaser
+- Primærindeks er en indeks på primærnøkkelen til en tabell, som at Ansatt ID kan være et eksempel på
+- "Tett" indeks: Bare ett indeksfelt pr. unike søkenøkkel, har et oppslag for hver verdi av søkenøkkelen
+- "Denormalisering" er omvednt prosess i normaliseringsprosessen. Fungerer ved å legge til overflødig data for å *optimalisere* ytelsen
+
+
+## Databaser i produksjon
+- En transaksjon er enlogisk operasjon mot databasen
+  - an bestå av en eller flere SQL-setninger
+  - programmereren bestemmer hva som er en transaksjon
+- Samtidige brukere kan ødelegge for hverandre - kollisjon
+- En transaksjonslogg er en fil på ytre lager som inneholder data om alle operasjoner som er utført mot databasen
+
+|Akronym      |Betydning|
+|:--          |:--|
+|Atomicity    | Alle eller ingen av deloperasjonene i en transaksjon må fullføres |
+|Consistency  | En transaksjon fører databasen fra en lovlig tilstand til en annen lovlig tilstand |
+|Isolation    | Effekt av transaksjoner under utførelse skal ikke kunne observeres av andre transaksjoner |
+|Durability   | Effekt av fullførte (comitted) transaksjoner lagres i databasen og skal ikke gå tapt på grunn av feil |
+
+- En *lås* er en *ventemekanisme* som blir styrt av en transaksjon
+  - skrivelåser (exclusive locks)
+  - leselåser (shared locks)
+- En transaksjon følger reglene for *tofaselåsing* hvis låseoperasjoner gjøes før første frigivelse
+  - Ingen låsing etter første opplåsing
+- Vranglås
+  - Typ dining philosophers fra INF214 hvor alle venter på neste i en sirkel og vil aldri låse opp
+- *Horisontal fragmentering:* Tabell delt opp etter rader
+- *Vertikal fragmentering:* Tabell delt opp etter kolonner
+  - Primærnøkkel må være med i *alle* fragmenter
+- *Metadata* er "data om data" og beskriver databasen; 
+  - Hvilke tabeller finnes
+  - Hvordan tabellene er bygget opp
+  - Hvilke indekser er definert
+- En *metadatabase* er en database model for metadata
+- Integritetskontroll er en modul(?) som legger ved regler som verifiserer operasjoner og passer på at data ikke blir korrupt
+- En SQL-parser er på en måte en "oversetter" fra spørring til *faktisk* spørring; f.eks ```ignore.case``` o.l.
+- 
