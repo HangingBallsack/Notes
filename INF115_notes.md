@@ -229,4 +229,30 @@ TODO: fyll inn
 - En *metadatabase* er en database model for metadata
 - Integritetskontroll er en modul(?) som legger ved regler som verifiserer operasjoner og passer på at data ikke blir korrupt
 - En SQL-parser er på en måte en "oversetter" fra spørring til *faktisk* spørring; f.eks ```ignore.case``` o.l.
-- 
+
+## HTML/XML
+- Et element i HTML er alt mellom \<starttag> _dette_ og \</starttag>
+- URL/URI
+  - URL:
+    - Addressen din
+  - URI:
+    - Navnet ditt
+- XML Schema defines the building blocks of an XML document
+- "Velformert" XML inneholder følgende tre punkter
+  - Nøyaktig **et** rotelement
+  - Alle elementer har både start og sluttmerke
+  - Elementer er nøstet korrekt
+- Vi har disse kravene fordi vi kan representere XML-dokumenter som et tre
+- XML er et markup språk som er laget for å bære data, ikke vise det, og trenger derfor et stylesheet for å vise informasjon
+- et XSLT-stilark består av kode for å representere dataen i et XML dokument, gjerne med for-loops 
+
+## PHP
+- Vi trenger et språk som PHP fordi det er lett, gratis og kjører på nesten alle maskinvarer
+- PHP er en skriptspråk fordi det er et dynamisk høy-nivå språk, python er et eksempel på et annet skriptspråk
+- **GET** er brukt til å hente data fra en spesifikk ressurs
+- **POST** er brukt til å sende data til en server/oppdatere en ressurs, tryggere enn GET
+- PHP-tolkeren befinner seg på backend-serveren
+- En assosiativ tabell er en abstrakt datatype som består av attributt-verdi par
+- Utviklingstakk er en kombinasjon av operativsystem, DBHS, web-tjener, programmeringsspråk
+- SQL-injection er å escape sql-spørring og plante ondsinnet kode som kan utføre handlinger
+- HEX-conversion konverterer plaintext bokstaver/tall om til den hexadesimale representasjonen og forhindrer til dels SQL injection
