@@ -189,7 +189,7 @@ TODO: fyll inn
   - inneholder som regel mange *poster* (rader)
 - En *post* består av en mengde bytes som lagres på en blokk
   - Har Posthode, postskjemaer
-<img src=img/post.png width=500>
+<img src=../img/post.png width=500>
 
 - Hashing er å kartlegge data til verdier som er fikserte
 - Hashing er ikke til hjelp når det kommer til å f.eks søke etter URL strenger i databaser
