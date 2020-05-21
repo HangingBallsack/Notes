@@ -80,7 +80,7 @@ $πONr(σTlf="12341234"(Oppdrag)⊗Oppdrag.CNr=Container.CNrσTypeId="2"(Contain
 
 ## c)
 **Operatortre:**   
-<img src=img/operatortre.png>
+<img src=../img/operatortre.png>
 
 # Oppgave4
 Hvorfor løsningen er problematisk: 
