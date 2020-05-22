@@ -1,17 +1,21 @@
 # Oppgave1
 ## a)
 ``` SQL
-SELECT * FROM ContainerType WHERE MaxVekt > 5000 AND dagpris < 1800;
+SELECT * FROM ContainerType 
+WHERE MaxVekt > 5000 
+AND dagpris < 1800;
 ```
 
 ## b)
 ``` SQL
-SELECT * FROM Oppdrag WHERE FraDato = "2019-12-17" OR TilDato = "2019-12-19";
+SELECT * FROM Oppdrag 
+WHERE FraDato = "2019-12-17" OR TilDato = "2019-12-19";
 ```
 
 ## c)
 ``` SQL
-SELECT TypeID, TypeNavn, count(*) FROM ContainerType, Container WHERE ContainerType.TypeID = Container.TypeID;
+SELECT TypeID, TypeNavn, count(*) FROM ContainerType, Container 
+WHERE ContainerType.TypeID = Container.TypeID;
 ```
 
 ## d)
@@ -70,8 +74,8 @@ havn(hnr, bynavn, telefon)
 SELECT ONr 
 FROM Oppdrag, Container 
 WHERE Oppdrag.CNr = Container.CNr 
-    AND Tlf="12341234" 
-    AND TypeId="2";
+AND Tlf="12341234" 
+AND TypeId="2";
 ```
 ## b)
 $πONr(σTlf="12341234"(σTypeId="2"(Skadesak⊗Oppdrag.CNr=Container.CNrContainer)))$

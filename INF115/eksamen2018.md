@@ -1,7 +1,6 @@
 # Oppgave 1
-
 ## a)
-```SQL 
+``` SQL 
 SELECT * FROM Tur 
 WHERE Pris < 8000
 AND MONTH(StartDato) = 7;
@@ -28,7 +27,7 @@ CREATE TABLE Hytte(
     Navn VARCHAR NOT NULL,
     AntSenger INT,
     HytteType VARCHAR,
-    CONTRAINT HyttePK PRIMARY KEY (HNr)
+    CONSTRAINT HyttePK PRIMARY KEY (HNr)
 )
 ```
 
