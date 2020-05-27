@@ -128,7 +128,7 @@ The list has entries consisting of:
 - Enviromental metrics
 
 **CVSS Example:**   
-<img src = img/CVSS.png width = 600></img>
+<img src = ../assets/CVSS.png width = 600></img>
 
 ### CWE - Common Weakness Enumeration
 A category system for software weaknesses and vulnerabilities.
@@ -199,7 +199,7 @@ In a system with access control lists, permissions are assigned to objects:
 - Each object has a list of permissions assgned to different users.
 Typical (but not always), the access control list specifies an owner of the object
 
-    <img src = img/ACM.png width = 600></img>
+<img src = "../assets/ACM.png" width = 600>
 
 **Example:**
 In Unix-like systems:
@@ -219,7 +219,7 @@ Every file has:
 In a role based access control system, a set of roles abstract the permissions from users
 
 
-<img src = img/RBAC.png width = 600></img>
+<img src = ../assets/RBAC.png width = 600>
 
 **Example:**
 
@@ -430,7 +430,7 @@ Public keys must be authenticated, many different schemes for this:
 
 ### Man-in-the-middle attacks
 
-<img src = img/MiM.png width = 600></img>
+<img src = ../assets/MiM.png width = 600></img>
 
 Assumption: The man in the middle does not strike the first time  
 Mechanism: Trust the public key used in first session. Use that for  authentication of later session
@@ -523,7 +523,7 @@ Most modern cryptography is based on block ciphers.
 - Deterministic: Same key and input gives same output   
 **Problem:** Most applications have variable length input/output   
 
-    <img src=img/StreamCipher.png width=450></img>
+<img src=../assets/StreamCipher.png width=450></img>
 
 - Stream ciphers are based on cryptographic pseudo-random number generators (CPRNGs)
 - provides safe extension to arbitrary inputs   
@@ -801,7 +801,7 @@ Design:
 - Changes existing kernel primitives when in capability mode
 - **Userspace library** (libcapsicum).   
 
-    <img src=img/Capsicum.png width = 600></img>
+    <img src=../assets/Capsicum.png width = 600></img>
 
 - In capsicum, **capabilities are file descriptors** along with a set of acess rights
   - there are about 60 possible access rights for a capability in capsicum

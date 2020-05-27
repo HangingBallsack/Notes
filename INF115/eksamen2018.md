@@ -55,7 +55,7 @@ bud(BNr, Pris)
 kommune(KNr, Navn)
 fylke(FNr, Navn)
 ```
-<img src="../img/Untitled.png">
+<img src="../assets/Untitled.png">
 
 # Oppgave 3
 ## a)

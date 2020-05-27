@@ -55,7 +55,7 @@ kontaktperson(navn, epost, tlfnummer)
 virksomhet(virksomhetID, erprivat)
 oppfølging(SøkerID, vikarID, søkerEval, VikarEval)
 ```
-<img src="../img/ER2016.png">
+<img src="../assets/ER2016.png">
 
 ## Oppgave 3
 ### a)

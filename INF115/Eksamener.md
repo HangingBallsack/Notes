@@ -60,7 +60,7 @@ kontaktperson(navn, epost, tlfnummer)
 virksomhet(virksomhetID, erprivat)
 oppfølging(SøkerID, vikarID, søkerEval, VikarEval)
 ```
-<img src="../img/ER2016.png">
+<img src="../assets/ER2016.png">
 
 ## Oppgave 3
 ### a)
@@ -249,7 +249,7 @@ bud(BNr, Pris)
 kommune(KNr, Navn)
 fylke(FNr, Navn)
 ```
-<img src="../img/Untitled.png">
+<img src="../assets/Untitled.png">
 
 ## Oppgave 3
 ### a)
@@ -457,7 +457,7 @@ $πONr(σTlf="12341234"(Oppdrag)⊗Oppdrag.CNr=Container.CNrσTypeId="2"(Contain
 
 ### c)
 **Operatortre:**   
-<img src=../img/operatortre.png>
+<img src=../assets/operatortre.png>
 
 ## Oppgave4
 Hvorfor løsningen er problematisk: 
