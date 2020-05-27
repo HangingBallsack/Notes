@@ -1,0 +1,643 @@
+# Single Answer Questions - INF140
+
+Correct answer is written in ***bold/italic***.
+
+<!DOCTYPE html>
+<html>
+  <div>
+    <ol>
+      <li>
+        <p>Which of the following statements best describes modern hacker?</p>
+        <ol type="A">
+          <li>Bored and lonely anti-social teenagers who hack as a challenge and sometimes for profit.</li>
+          <li>Computer savvy people who hack individuals and businesses as a form of competition.</li>
+          <li>Highly-organized crime gangs run like businesses who deploy highly automated and sometimes highly targeted
+            attacks against individuals and businesses for profit.</li>
+          <li><b><i>All of the above.</i></b></li>
+        </ol>
+      </li>
+      <li>
+        <p>You have inadvertently opened a web link contained in a suspicious email and now your computer is behaving
+          strangely. What should course of action should you follow next?  <b><i>Både B og C høres jo logisk ut?</b></i></p>
+        <ol type="A">
+          <li>The purpose of a firewall and security software is to block malicious code getting into your computer in
+            the
+            first place so no action is needed</li>
+          <li><b><i>You need to update and run your anti-virus software.</b></i></li>
+          <li><b><i>You need to contact your IT help desk or Information Security team.</b></i></li>
+          <li>Keep an eye on the performance of your computer.</li>
+        </ol>
+      </li>
+      <li>
+        <p>Who are the targets of modern day hackers?</p>
+        <ol type="A">
+          <li>Banks and finance companies who process a lot of payments.</li>
+          <li><b><i>Any organization or individual is liable to be the victim of hackers.</b></i></li>
+          <li>Companies which hold a lot of proprietary information.</li>
+          <li>Companies which hold credit card numbers of customers.</li>
+        </ol>
+      </li>
+      <li>
+        <p>When receiving a suspicious email, what is the best way to validate a legitimate email vs. a phishing email?</p>
+        <ol type="A">
+          <li>Bad spelling, poor syntax and grammar are one of the tell-tale signs of a fake email.</li>
+          <li>Look at the email headers to see where it really came from.</li>
+          <li>Look for poorly replicated logos.</li>
+          <li><b><i>Contact the sender on some other medium besides email to verify whether they sent you the email.</b></i></li>
+        </ol>
+      </li>
+      <li>
+        <p>Unexpectedly, you get an email from a colleague who requests you to urgently click on an email link which
+          they have sent you. What is the safest option?</p>
+        <ol type="A">
+          <li>The link is from a known person therefore it’s safe to open.</li>
+          <li>If the link was malicious the organization’s firewall would have flagged or blocked it, therefore it’s
+            safe
+            to open.</li>
+          <li>Reply to the sender to double-check if the link is safe to open as they might have sent it accidentally.
+          </li>
+          <li><b><i>Do not click the link. Phone the sender for verification.</b></i></li>
+        </ol>
+      </li>
+      <li>
+        <p>Where should you store the encryption passphrase for your laptop?</p>
+        <ol type="A">
+          <li>On a sticker underneath your laptop’s battery as it’s not visible to anyone using the laptop.</li>
+          <li>On a sticky note attached to the base of your laptop.</li>
+          <li>In a password-protected Word file stored on your laptop.</li>
+          <li><b><i>Use the password management tool supplied/authorized by your organization.</b></i></li>
+        </ol>
+      </li>
+      <li>
+        <p>You have a highly sensitive document which you need to email to a trusted third-party. What is the safest way
+          to send this?</p>
+        <ol type="A">
+          <li>Make sure you scan the document with your anti-virus software first.</li>
+          <li>Send the document from your work email account.</li>
+          <li><b><i>Encrypt the document first. Then send the password to the third-party using a different communication
+            method.</b></i></li>
+          <li>Send the document using a file sharing application.</li>
+        </ol>
+      </li>
+      <li>
+        <p>A colleague calls you telling you they have an urgent deadline to meet. But unfortunately, they have
+          forgotten
+          their password to the client database. What should you do to help?</p>
+        <ol type="A">
+          <li>Go to a computer terminal and log the user in so they can meet their deadline.</li>
+          <li><b><i>Suggest to your colleague that they call your IT help desk for a password reset link.</b></i></li>
+          <li>Give them your login credentials temporarily so your colleague can meet their deadline.</li>
+          <li>Put your login credentials on an encrypted USB memory stick and hand it to them.</li>
+        </ol>
+      </li>
+      <li>
+        <p>You have just moved to a new department and have been issued with a new set of passwords. Which one of these
+          methods offers you the safest option for storing them?</p>
+        <ol type="A">
+          <li>Write them down in a notebook beside your desk for handy reference.</li>
+          <li>Use a sticky note making sure you place under your keyboard instead of on or near your computer.</li>
+          <li>Store them in an Excel file on your computer but give the file name something unrelated to passwords.</li>
+          <li><b><i>Use the password management tool supplied/authorized by your organization.</b></i></li>
+        </ol>
+      </li>
+      <li>
+        <p>You have an old laptop with work-related files still stored on it. You want to give the system away to
+          charity.
+          What is the safest way to keep the file contents confidential?</p>
+        <ol type="A">
+          <li>Login to the computer to delete the files and un-install programs.</li>
+          <li>Login to the computer, delete the files and then empty the recycle bin.</li>
+          <li>Install a new copy of the operating system on the computer.</li>
+          <li><b><i>Remove the hard disk and give it to your IT or helpdesk team to destroy the content securely.</b></i></li>
+        </ol>
+      </li>
+      <li>
+        <p>You’ve just got a warning from your bank that suspicious activity has been detected and to login immediately
+          using a URL (link) provided. What is the best course of action to take?</p>
+        <ol type="A">
+          <li>Login immediately and change your password to a more complex one.</li>
+          <li><b><i>Contact your bank using the telephone number on the back of your credit card.</b></i></li>
+          <li>Login to your bank account immediately and check your balance.</li>
+          <li>Check the headers in the email and then login.</li>
+        </ol>
+      </li>
+      <li>
+        <p>Who deploy Malwares to a system or network?</p>
+        <ol type="A">
+          <li>Criminal organizations, Black hat hackers, software developers, cyber-terrorists</li>
+          <li>Criminal organizations, White hat hackers, malware developers, cyber-terrorists</li>
+          <li>Criminal organizations, gray hat hackers, Malware developers, Penetration testers</li>
+          <li><b><i>Criminal organizations, Black hat hackers, malware developers, cyber-terrorists</b></i></li>
+        </ol>
+      </li>
+      <li>
+        <p>Your existing password is “Northwave” and your IT department has requested that you change it. Which one of
+          these would be the safest to use?</p>
+        <ol type="A">
+          <li><b><i>Yellowbuscamerahorse</b></i></li>
+          <li>Northwave1</li>
+          <li>Northwave!</li>
+          <li>W@venorth</li>
+        </ol>
+      </li>
+      <li>
+        <p>A supplier has sent you a USB memory stick in the post which contains drawings of a project that you're
+          collaborating on. What is the safest course of action?</p>
+        <ol type="A">
+          <li>Perform a virus scan of the memory stick before opening any of its files.</li>
+          <li>Use the USB port in front of your computer instead of the back which enables you to disconnect the memory
+            stick quickly if it’s infected.</li>
+          <li><b><i>Do not use the USB stick. Request the supplier to the send the file via email or upload it to a secure
+            file
+            sharing service.</b></i></li>
+          <li>Insert the USB memory stick but don’t click on any of the files.</li>
+        </ol>
+      </li>
+      <li>Patching is important to your computer because
+        <ol type="A">
+          <li>Patches remove viruses</li>
+          <li>It reduces spam in your inbox</li>
+          <li><b><i>It makes your computer less vulnerable to virus attacks</b></i></li>
+          <li>It provides new system functions</li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+  <div id="cybersecurity-ethics" class="section level3">
+    <h3>Cybersecurity Ethics</h3>
+    <ol>
+      <li>Suicide Hackers are those ____A_____
+        <ol type="A">
+          <li>who break a system for some specific purpose with or without keeping in mind that they may suffer long
+            term
+            imprisonment due to their malicious activity</li>
+          <li>individuals with no knowledge of codes but an expert in using hacking tools</li>
+          <li>who know the consequences of their hacking activities and hence try to prevent them by erasing their
+            digital
+            footprints</li>
+          <li>who are employed in an organization to do malicious activities on other firms</li>
+        </ol>
+      </li>
+      <li>They are nefarious hackers, and their main motive is to gain financial profit by doing cyber crimes. Who are
+        "they" referred to here? ____D___
+        <ol type="A">
+          <li>Gray Hat Hackers</li>
+          <li>White Hat Hackers</li>
+          <li>Black Hat Hackers</li>
+          <li>All of the above</li>
+        </ol>
+      </li>
+      <li>Hackers who help in finding bugs and vulnerabilities in a system &amp; don't intend to crack a system are
+        termed
+        as ____B____
+        <ol type="A">
+          <li>Black Hat hackers</li>
+          <li>White Hat Hackers</li>
+          <li>Grey Hat Hackers</li>
+          <li>Red Hat Hackers</li>
+        </ol>
+      </li>
+      <li>What is the ethics behind training how to hack a system?___A___
+        <ol type="A">
+          <li>To think like hackers and to help defend such attacks</li>
+          <li>To hack a system without the permission</li>
+          <li>To hack a network that is vulnerable</li>
+          <li>To corrupt software or service using malware</li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+  <div id="cybersecurity-attributes-vulnerabilities-and-controls" class="section level3">
+    <h3>Cybersecurity attributes, vulnerabilities and controls</h3>
+    <ol>
+      <li>According to the CIA Triad, which of the below-mentioned element is not considered in the triad?___C___
+        <ol type="A">
+          <li>Confidentiality</li>
+          <li>Integrity</li>
+          <li>Authenticity</li>
+          <li>Availability</li>
+        </ol>
+      </li>
+      <li>When you use the word ___A_____ it means you are protecting your data from getting disclose -
+        <ol type="A">
+          <li>Confidentiality</li>
+          <li>Integrity</li>
+          <li>Authentication</li>
+          <li>Availability</li>
+        </ol>
+      </li>
+      <li>When integrity is lacking in a security system, _____C____ occurs.
+        <ol type="A">
+          <li>Database hacking</li>
+          <li>Data deletion</li>
+          <li>Data tampering</li>
+          <li>Data leakage</li>
+        </ol>
+      </li>
+      <li>Why the elements confidentiality, integrity, authentication, authorization and availability are considered
+        fundamental?
+        <ol type="A">
+          <li>They help understanding hacking better</li>
+          <li>They help understanding threats better</li>
+          <li>They help understands security and its components better</li>
+          <li>They help to understand the cyber-crime better</li>
+        </ol>
+      </li>
+      <li>This helps in identifying the origin of information and authentic user. This referred to here as _____C_____
+        <ol type="A">
+          <li>Confidentiality</li>
+          <li>Integrity</li>
+          <li>Authentication</li>
+          <li>Availability</li>
+        </ol>
+      </li>
+      <li>Which of these is not a proper method of maintaining confidentiality? ___D____
+        <ol type="A">
+          <li>Biometric verification</li>
+          <li>ID and password based verification</li>
+          <li>2-factor authentication</li>
+          <li>switching off the phone</li>
+        </ol>
+      </li>
+      <li>One common way to maintain data availability is ____B____
+        <ol type="A">
+          <li>Data clustering</li>
+          <li>Data mirroring and backup</li>
+          <li>Data recovery</li>
+          <li>Data Altering</li>
+        </ol>
+      </li>
+      <li>
+        <p>The integrity of data is not related to which of the following?___D___</p>
+        <ol type="A">
+          <li>Unauthorized manipulation or changes to data</li>
+          <li>The modification of data without authorization</li>
+          <li>The intentional or accidental substitution of data</li>
+          <li>The extraction of data to share with unauthorized entities</li>
+        </ol>
+      </li>
+      <li>Existence of weakness in a system or network is called ___B____
+        <ol type="A">
+          <li>Threat</li>
+          <li>Vulnerability</li>
+          <li>Exploit</li>
+          <li>Attack</li>
+        </ol>
+      </li>
+      <li> A/An ___A_____ in a system is a potential danger that a vulnerability will be exploited.
+        <ol type="A">
+          <li>Threat</li>
+          <li>Vulnerability</li>
+          <li>Exploit</li>
+          <li>Attack</li>
+        </ol>
+      </li>
+      <li>________ is a way to breach the security by using the vulnerability of that system.____C___
+        <ol type="A">
+          <li>Threat</li>
+          <li>Vulnerability</li>
+          <li>Exploit</li>
+          <li>Attack</li>
+        </ol>
+      </li>
+      <li>
+        <p>The new reinforced lock and cage serve as which of the following?____B___</p>
+        <ol type="A">
+          <li>
+            <p>Logical controls</p>
+          </li>
+          <li>
+            <p>Physical controls</p>
+          </li>
+          <li>
+            <p>Administrative controls</p>
+          </li>
+          <li>
+            <p>Compensating controls</p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>The operating system access controls comprise which type of control in the following?___B___</p>
+        <ol type="A">
+          <li>Logical controls</li>
+          <li>Physical controls</li>
+          <li>Administrative controls</li>
+          <li>Compensating controls</li>
+        </ol>
+      </li>
+      <li>
+        <p>Which is the most valuable technique in practice when determining if a specific security control should be
+          implemented?___A___</p>
+        <ol type="A">
+          <li>Risk analysis</li>
+          <li>Cost/benefit analysis</li>
+          <li>Annualized loss expectancy results</li>
+          <li>Identifying the vulnerabilities and threats causing the risk</li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+  <div id="cybersecurity-attacks" class="section level3">
+    <h3>Cybersecurity Attacks</h3>
+    <ol>
+      <li>The full form of Malware is ___C_____
+        <ol type="A">
+          <li>Malfunctioned Software</li>
+          <li>Multipurpose Software</li>
+          <li>Malicious Software</li>
+          <li>None of above</li>
+        </ol>
+      </li>
+      <li>Compromising a user's session for exploiting the user's data and do malicious activities or misuse user's
+        credentials is called _____A______
+        <ol type="A">
+          <li>Session Hijacking</li>
+          <li>Session Fixation</li>
+          <li>Cookie stuffing</li>
+          <li>Session Spying</li>
+        </ol>
+      </li>
+      <li>
+        <p>What kind of cybersecurity risks can be minimized by using a Virtual Private Network (VPN)?___A___</p>
+        <ol type="A">
+          <li>Use of insecure Wi-Fi networks</li>
+          <li>Key-logging</li>
+          <li>De-anonymization by network operators</li>
+          <li>Phishing attacks</li>
+        </ol>
+      </li>
+      <li>Which of the following exploits computer networks and security holes to reproduce itself?___A___
+        <ol type="A">
+          <li>Worm</li>
+          <li>Trojan Horse</li>
+          <li>Virus</li>
+          <li>Email Virus</li>
+        </ol>
+      </li>
+      <li>A/An _____D_____ is a piece of software or a segment of command that usually take advantage of a bug to cause
+        unintended actions and behaviors.
+        <ol type="A">
+          <li>malware</li>
+          <li>trojan</li>
+          <li>worms</li>
+          <li>exploit</li>
+        </ol>
+      </li>
+      <li>Which of this is an example of physical hacking? ____B_____
+        <ol type="A">
+          <li>Remote Unauthorised access</li>
+          <li>Inserting malware loaded USB to a system</li>
+          <li>SQL Injection on SQL vulnerable site</li>
+          <li>DDoS (Distributed Denial of Service) attack</li>
+        </ol>
+      </li>
+      <li>Which method of hacking will record all your keystrokes? ___C___
+        <ol type="A">
+          <li>Keyhijacking</li>
+          <li>Keyjacking</li>
+          <li>Keylogging</li>
+          <li>Keyboard monitoring</li>
+        </ol>
+      </li>
+      <li>Stuxnet is a ____A_____
+        <ol type="A">
+          <li>Worm</li>
+          <li>Virus</li>
+          <li>Trojan</li>
+          <li>Antivirus</li>
+        </ol>
+      </li>
+      <li>WannaCry is a ___C___
+        <ol type="A">
+          <li>Adware</li>
+          <li>Spyware</li>
+          <li>Ransomware</li>
+          <li>Riskware</li>
+        </ol>
+      </li>
+      <li>____D____ automates an action or attack so that repetitive tasks are done at a faster rate.
+        <ol type="A">
+          <li>Auto-bots</li>
+          <li>Cookie-bots</li>
+          <li>Robots</li>
+          <li>Bots</li>
+        </ol>
+      </li>
+      <li>A computer ____B____ is a malicious code which self-replicates by copying itself to other programs
+        <ol type="A">
+          <li>program</li>
+          <li>virus</li>
+          <li>application</li>
+          <li>worm</li>
+        </ol>
+      </li>
+      <li>Which of the following is not a type of virus?___D___
+        <ol type="A">
+          <li>Boot sector</li>
+          <li>Polymorphic</li>
+          <li>Multipartite</li>
+          <li>Trojans</li>
+        </ol>
+      </li>
+      <li>________A_______ infects the master boot record and it is challenging and a complex task to remove this virus.
+        <ol type="A">
+          <li>Boot Sector Virus</li>
+          <li>Polymorphic</li>
+          <li>Multipartite</li>
+          <li>Trojans</li>
+        </ol>
+      </li>
+      <li>______C_______ are difficult to identify as they keep on changing their type and signature.
+        <ol type="A">
+          <li>Non-resident virus</li>
+          <li>Boot Sector Virus</li>
+          <li>Polymorphic Virus</li>
+          <li>Multipartite Virus</li>
+        </ol>
+      </li>
+      <li>A ______B_____ is a small malicious program that runs hidden in a legitimate-like software.
+        <ol type="A">
+          <li>Virus</li>
+          <li>Trojan</li>
+          <li>Shareware</li>
+          <li>Adware</li>
+        </ol>
+      </li>
+      <li>______C______ can work in background and steals sensitive data -
+        <ol type="A">
+          <li>Virus</li>
+          <li>Shareware</li>
+          <li>Trojan</li>
+          <li>Adware</li>
+        </ol>
+      </li>
+      <li>Trojans normally do not do one of the following. What is that?___B___
+        <ol type="A">
+          <li>Deleting Data</li>
+          <li>Protecting Data</li>
+          <li>Modifying Data</li>
+          <li>Copying Data</li>
+        </ol>
+      </li>
+      <li>A ______B_________ provides malicious users remote control over the targeted computer.
+        <ol type="A">
+          <li>DDoS-Trojan</li>
+          <li>Backdoor Trojan</li>
+          <li>Trojan-Banker</li>
+          <li>Trojan-Downloader</li>
+        </ol>
+      </li>
+      <li>
+        Which of the following malwares can modify data on your system, so that your system doesn't run correctly or you
+        can no longer access specific data, and it even asks for ransom in order to give your access?____D____
+        <ol type="A">
+          <li>Trojans-IM</li>
+          <li>Backdoor Trojans</li>
+          <li>Trojan-Downloader</li>
+          <li>Ransom Trojan</li>
+        </ol>
+      </li>
+      <li>A _____B______ is a method in which a computer security mechanism is bypassed untraceable for accessing the
+        computer or its information.
+        <ol type="A">
+          <li>front-door</li>
+          <li>backdoor</li>
+          <li>clickjacking</li>
+          <li>key-logging</li>
+        </ol>
+      </li>
+      <li>Backdoors cannot be designed as _______D_______
+        <ol type="A">
+          <li>the hidden part of a program</li>
+          <li>as a part of Trojans</li>
+          <li>embedded code of the firmware</li>
+          <li>embedded with anti-malware</li>
+        </ol>
+      </li>
+      <li>______A________ is an internet scam done by cyber-criminals where the user is convinced digitally to provide
+        confidential information.
+        <ol type="A">
+          <li>Phishing attack</li>
+          <li>DoS attack</li>
+          <li>Website attack</li>
+          <li>MiTM attack</li>
+        </ol>
+      </li>
+      <li>Which of the following type of data, phishers cannot steal from its target victims?___D___
+        <ol type="A">
+          <li>bank details</li>
+          <li>phone number</li>
+          <li>passwords</li>
+          <li>apps installed in the mobile</li>
+        </ol>
+      </li>
+      <li>The intent of a _______B_______ is to overkill the targeted server's bandwidth and other resources of the
+        target
+        website.
+        <ol type="A">
+          <li>Phishing attack</li>
+          <li>DoS attack</li>
+          <li>Website attack</li>
+          <li>MiTM attack</li>
+        </ol>
+      </li>
+      <li>DoS is abbreviated as __________A___________
+        <ol type="A">
+          <li>Denial of Service</li>
+          <li>Distribution of Server</li>
+          <li>Distribution of Service</li>
+          <li>Denial of Server</li>
+        </ol>
+      </li>
+      <li>A DoS attack coming from a large number of IP addresses, making it hard to manually filter or crash the
+        traffic
+        from such sources is known as a _______D______
+        <ol type="A">
+          <li>GoS attack</li>
+          <li>PDoS attack</li>
+          <li>DoS attack</li>
+          <li>DDoS attack</li>
+        </ol>
+      </li>
+      <li>Which of the following is a type of transport layer DoS?____B?___
+        <ol type="A">
+          <li>HTTP flooding</li>
+          <li>Ping flooding</li>
+          <li>TCP flooding</li>
+          <li>DNS query flooding</li>
+        </ol>
+      </li>
+      <li>_____B_____ is a naming system given to different computers which adapt to human-readable domain names.
+        <ol type="A">
+          <li>HTTP</li>
+          <li>DNS</li>
+          <li>WWW</li>
+          <li>ISP</li>
+        </ol>
+      </li>
+      <li>Which of the following is a kind of attack which uses DNS based vulnerabilities for diverting the traffic of
+        the
+        internet____A___
+        <ol type="A">
+          <li>DNS poisoning</li>
+          <li>DNS re-routing</li>
+          <li>DNS cracking</li>
+          <li>Domain link poisoning</li>
+        </ol>
+      </li>
+      <li>______B________ is a means of storing &amp; transmitting information in a specific format so that only those
+        for
+        whom it is planned can understand or process it.
+        <ol type="A">
+          <li>Malware Analysis</li>
+          <li>Cryptography</li>
+          <li>Reverse engineering</li>
+          <li>Exploit writing</li>
+        </ol>
+      </li>
+      <li>Which of the following is normally not used to provide data integrity?
+        <ol type="A">
+          <li>Symmetric Encryption</li>
+          <li>Asymmetric Encryption</li>
+          <li>Hash function</li>
+          <li>Message Authentication Code</li>
+        </ol>
+      </li>
+      <li>_____A______ is not an attack technique where numerous TCP segments are spoofed with a bogus source address
+        which
+        is then sent to a server.
+        <ol type="A">
+          <li>SYN flooding attack</li>
+          <li>ACK flooding attack</li>
+          <li>Fin flooding attack</li>
+          <li>Ping flooding attack</li>
+        </ol>
+      </li>
+      <li>Which of the protocol is not used in the network layer of the TCP/IP model?___D___
+        <ol type="A">
+          <li>ICMP</li>
+          <li>IP</li>
+          <li>IGMP</li>
+          <li>HTTP</li>
+        </ol>
+      </li>
+      <li>Which of the following the correct order of layers in TCP/IP model from top to down?___A___
+        <ol type="A">
+          <li>Application, Transport, Network, Data, Physical</li>
+          <li>Application, Transport, Data, Network, Physical</li>
+          <li>Application, Data, Network, Transport, Physical</li>
+          <li>Application, Network, Transport, Data, Physical</li>
+        </ol>
+      </li>
+      <li>Which of the following attacks pretends to associate a certain IP address to its MAC address in a LAN?___C___
+        <ol type="A">
+          <li>DNS spoofing</li>
+          <li>DHCP spoofing</li>
+          <li>ARP spoofing</li>
+          <li>SYN spoofing</li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+</html>
