@@ -166,40 +166,34 @@ Correct answer is written in ***bold/italic***.
   <div id="cybersecurity-ethics" class="section level3">
     <h3>Cybersecurity Ethics</h3>
     <ol>
-      <li>Suicide Hackers are those ____A_____
+      <li>Suicide Hackers are those
         <ol type="A">
-          <li>who break a system for some specific purpose with or without keeping in mind that they may suffer long
-            term
-            imprisonment due to their malicious activity</li>
-          <li>individuals with no knowledge of codes but an expert in using hacking tools</li>
-          <li>who know the consequences of their hacking activities and hence try to prevent them by erasing their
-            digital
-            footprints</li>
+          <li><b><i>who break a system for some specific purpose with or without keeping in mind that they may suffer long term imprisonment due to their malicious activity.</b></i></li>
+          <li>individuals with no knowledge of codes but an expert in using hacking tools.</li>
+          <li>who know the consequences of their hacking activities and hence try to prevent them by erasing their digital footprints.</li>
           <li>who are employed in an organization to do malicious activities on other firms</li>
         </ol>
       </li>
       <li>They are nefarious hackers, and their main motive is to gain financial profit by doing cyber crimes. Who are
-        "they" referred to here? ____D___
+        "they" referred to here?
         <ol type="A">
           <li>Gray Hat Hackers</li>
           <li>White Hat Hackers</li>
-          <li>Black Hat Hackers</li>
+          <li><b><i>Black Hat Hackers</b></i></li>
           <li>All of the above</li>
         </ol>
       </li>
-      <li>Hackers who help in finding bugs and vulnerabilities in a system &amp; don't intend to crack a system are
-        termed
-        as ____B____
+      <li>Hackers who help in finding bugs and vulnerabilities in a system &amp; don't intend to crack a system are termed as
         <ol type="A">
           <li>Black Hat hackers</li>
-          <li>White Hat Hackers</li>
+          <li><b><i>White Hat Hackers</b></i></li>
           <li>Grey Hat Hackers</li>
           <li>Red Hat Hackers</li>
         </ol>
       </li>
-      <li>What is the ethics behind training how to hack a system?___A___
+      <li>What is the ethics behind training how to hack a system?
         <ol type="A">
-          <li>To think like hackers and to help defend such attacks</li>
+          <li><b><i>To think like hackers and to help defend such attacks</b></i></li>
           <li>To hack a system without the permission</li>
           <li>To hack a network that is vulnerable</li>
           <li>To corrupt software or service using malware</li>
@@ -210,27 +204,27 @@ Correct answer is written in ***bold/italic***.
   <div id="cybersecurity-attributes-vulnerabilities-and-controls" class="section level3">
     <h3>Cybersecurity attributes, vulnerabilities and controls</h3>
     <ol>
-      <li>According to the CIA Triad, which of the below-mentioned element is not considered in the triad?___C___
+      <li>According to the CIA Triad, which of the below-mentioned element is not considered in the triad?
         <ol type="A">
           <li>Confidentiality</li>
           <li>Integrity</li>
-          <li>Authenticity</li>
+          <li><b><i>Authenticity</b></i></li>
           <li>Availability</li>
         </ol>
       </li>
-      <li>When you use the word ___A_____ it means you are protecting your data from getting disclose -
+      <li>When you use the word ________ it means you are protecting your data from getting disclose -
         <ol type="A">
-          <li>Confidentiality</li>
+          <li><b><i>Confidentiality</b></i></li>
           <li>Integrity</li>
           <li>Authentication</li>
           <li>Availability</li>
         </ol>
       </li>
-      <li>When integrity is lacking in a security system, _____C____ occurs.
+      <li>When integrity is lacking in a security system, _________ occurs.
         <ol type="A">
           <li>Database hacking</li>
           <li>Data deletion</li>
-          <li>Data tampering</li>
+          <li><b><i>Data tampering</b></i></li>
           <li>Data leakage</li>
         </ol>
       </li>
@@ -239,88 +233,80 @@ Correct answer is written in ***bold/italic***.
         <ol type="A">
           <li>They help understanding hacking better</li>
           <li>They help understanding threats better</li>
-          <li>They help understands security and its components better</li>
+          <li><b><i>They help understands security and its components better</b></i></li>
           <li>They help to understand the cyber-crime better</li>
         </ol>
       </li>
-      <li>This helps in identifying the origin of information and authentic user. This referred to here as _____C_____
+      <li>This helps in identifying the origin of information and authentic user. This referred to here as
         <ol type="A">
           <li>Confidentiality</li>
           <li>Integrity</li>
-          <li>Authentication</li>
+          <li><b><i>Authentication</b></i></li>
           <li>Availability</li>
         </ol>
       </li>
-      <li>Which of these is not a proper method of maintaining confidentiality? ___D____
+      <li>Which of these is not a proper method of maintaining confidentiality?
         <ol type="A">
           <li>Biometric verification</li>
           <li>ID and password based verification</li>
           <li>2-factor authentication</li>
-          <li>switching off the phone</li>
+          <li><b><i>Switching off the phone</b></i></li>
         </ol>
       </li>
-      <li>One common way to maintain data availability is ____B____
+      <li>One common way to maintain data availability is
         <ol type="A">
           <li>Data clustering</li>
-          <li>Data mirroring and backup</li>
+          <li><b><i>Data mirroring and backup</b></i></li>
           <li>Data recovery</li>
           <li>Data Altering</li>
         </ol>
       </li>
       <li>
-        <p>The integrity of data is not related to which of the following?___D___</p>
+        <p>The integrity of data is not related to which of the following?</p>
         <ol type="A">
           <li>Unauthorized manipulation or changes to data</li>
           <li>The modification of data without authorization</li>
           <li>The intentional or accidental substitution of data</li>
-          <li>The extraction of data to share with unauthorized entities</li>
+          <li><b><i>The extraction of data to share with unauthorized entities</b></i></li>
         </ol>
       </li>
-      <li>Existence of weakness in a system or network is called ___B____
+      <li>Existence of weakness in a system or network is called
         <ol type="A">
           <li>Threat</li>
+          <li><b><i>Vulnerability</b></i></li>
+          <li>Exploit</li>
+          <li>Attack</li>
+        </ol>
+      </li>
+      <li> A/An ________ in a system is a potential danger that a vulnerability will be exploited.
+        <ol type="A">
+          <li><b><i>Threat</b></i></li>
           <li>Vulnerability</li>
           <li>Exploit</li>
           <li>Attack</li>
         </ol>
       </li>
-      <li> A/An ___A_____ in a system is a potential danger that a vulnerability will be exploited.
+      <li>________ is a way to breach the security by using the vulnerability of that system.
         <ol type="A">
           <li>Threat</li>
           <li>Vulnerability</li>
-          <li>Exploit</li>
-          <li>Attack</li>
-        </ol>
-      </li>
-      <li>________ is a way to breach the security by using the vulnerability of that system.____C___
-        <ol type="A">
-          <li>Threat</li>
-          <li>Vulnerability</li>
-          <li>Exploit</li>
+          <li><b><i>Exploit</b></i></li>
           <li>Attack</li>
         </ol>
       </li>
       <li>
-        <p>The new reinforced lock and cage serve as which of the following?____B___</p>
-        <ol type="A">
-          <li>
-            <p>Logical controls</p>
-          </li>
-          <li>
-            <p>Physical controls</p>
-          </li>
-          <li>
-            <p>Administrative controls</p>
-          </li>
-          <li>
-            <p>Compensating controls</p>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <p>The operating system access controls comprise which type of control in the following?___B___</p>
+        <p>The new reinforced lock and cage serve as which of the following?</p>
         <ol type="A">
           <li>Logical controls</li>
+          <li><b><i>Physical controls</b></i></li>
+          <li>Administrative controls</li>
+          <li>Compensating controls</li>
+        </ol>
+      </li>
+      <li>
+        <p>The operating system access controls comprise which type of control in the following?</p>
+        <ol type="A">
+          <li><b><i>Logical controls</b></i></li>
           <li>Physical controls</li>
           <li>Administrative controls</li>
           <li>Compensating controls</li>
@@ -328,9 +314,9 @@ Correct answer is written in ***bold/italic***.
       </li>
       <li>
         <p>Which is the most valuable technique in practice when determining if a specific security control should be
-          implemented?___A___</p>
+          implemented?</p>
         <ol type="A">
-          <li>Risk analysis</li>
+          <li><b><i>Risk analysis</b></i></li>
           <li>Cost/benefit analysis</li>
           <li>Annualized loss expectancy results</li>
           <li>Identifying the vulnerabilities and threats causing the risk</li>
@@ -341,210 +327,210 @@ Correct answer is written in ***bold/italic***.
   <div id="cybersecurity-attacks" class="section level3">
     <h3>Cybersecurity Attacks</h3>
     <ol>
-      <li>The full form of Malware is ___C_____
+      <li>The full form of Malware is
         <ol type="A">
           <li>Malfunctioned Software</li>
           <li>Multipurpose Software</li>
-          <li>Malicious Software</li>
+          <li><b><i>Malicious Software</b></i></li>
           <li>None of above</li>
         </ol>
       </li>
       <li>Compromising a user's session for exploiting the user's data and do malicious activities or misuse user's
-        credentials is called _____A______
+        credentials is called
         <ol type="A">
-          <li>Session Hijacking</li>
+          <li><b><i>Session Hijacking</b></i></li>
           <li>Session Fixation</li>
           <li>Cookie stuffing</li>
           <li>Session Spying</li>
         </ol>
       </li>
       <li>
-        <p>What kind of cybersecurity risks can be minimized by using a Virtual Private Network (VPN)?___A___</p>
+        <p>What kind of cyber security risks can be minimized by using a Virtual Private Network (VPN)?</p>
         <ol type="A">
-          <li>Use of insecure Wi-Fi networks</li>
+          <li><b><i>Use of insecure Wi-Fi networks</b></i></li>
           <li>Key-logging</li>
           <li>De-anonymization by network operators</li>
           <li>Phishing attacks</li>
         </ol>
       </li>
-      <li>Which of the following exploits computer networks and security holes to reproduce itself?___A___
+      <li>Which of the following exploits computer networks and security holes to reproduce itself?
         <ol type="A">
-          <li>Worm</li>
+          <li><b><i>Worm</b></i></li>
           <li>Trojan Horse</li>
           <li>Virus</li>
           <li>Email Virus</li>
         </ol>
       </li>
-      <li>A/An _____D_____ is a piece of software or a segment of command that usually take advantage of a bug to cause
+      <li>A/An __________ is a piece of software or a segment of command that usually take advantage of a bug to cause
         unintended actions and behaviors.
         <ol type="A">
           <li>malware</li>
           <li>trojan</li>
           <li>worms</li>
-          <li>exploit</li>
+          <li><b><i>exploit</b></i></li>
         </ol>
       </li>
-      <li>Which of this is an example of physical hacking? ____B_____
+      <li>Which of this is an example of physical hacking?
         <ol type="A">
           <li>Remote Unauthorised access</li>
-          <li>Inserting malware loaded USB to a system</li>
+          <li><b><i>Inserting malware loaded USB to a system</b></i></li>
           <li>SQL Injection on SQL vulnerable site</li>
           <li>DDoS (Distributed Denial of Service) attack</li>
         </ol>
       </li>
-      <li>Which method of hacking will record all your keystrokes? ___C___
+      <li>Which method of hacking will record all your keystrokes?
         <ol type="A">
           <li>Keyhijacking</li>
           <li>Keyjacking</li>
-          <li>Keylogging</li>
+          <li><b><i>Keylogging</b></i></li>
           <li>Keyboard monitoring</li>
         </ol>
       </li>
-      <li>Stuxnet is a ____A_____
+      <li>Stuxnet is a
         <ol type="A">
-          <li>Worm</li>
+          <li><b><i>Worm</b></i></li>
           <li>Virus</li>
           <li>Trojan</li>
           <li>Antivirus</li>
         </ol>
       </li>
-      <li>WannaCry is a ___C___
+      <li>WannaCry is a
         <ol type="A">
           <li>Adware</li>
           <li>Spyware</li>
-          <li>Ransomware</li>
+          <li><b><i>Ransomware</b></i></li>
           <li>Riskware</li>
         </ol>
       </li>
-      <li>____D____ automates an action or attack so that repetitive tasks are done at a faster rate.
+      <li>________ automates an action or attack so that repetitive tasks are done at a faster rate.
         <ol type="A">
           <li>Auto-bots</li>
           <li>Cookie-bots</li>
           <li>Robots</li>
-          <li>Bots</li>
+          <li><b><i>Bots</b></i></li>
         </ol>
       </li>
-      <li>A computer ____B____ is a malicious code which self-replicates by copying itself to other programs
+      <li>A computer ________ is a malicious code which self-replicates by copying itself to other programs.
         <ol type="A">
           <li>program</li>
-          <li>virus</li>
+          <li><b><i>virus</b></i></li>
           <li>application</li>
           <li>worm</li>
         </ol>
       </li>
-      <li>Which of the following is not a type of virus?___D___
+      <li>Which of the following is not a type of virus?
         <ol type="A">
           <li>Boot sector</li>
           <li>Polymorphic</li>
           <li>Multipartite</li>
-          <li>Trojans</li>
+          <li><b><i>Trojans</b></i></li>
         </ol>
       </li>
-      <li>________A_______ infects the master boot record and it is challenging and a complex task to remove this virus.
+      <li>_______________ infects the master boot record and it is challenging and a complex task to remove this virus.
         <ol type="A">
-          <li>Boot Sector Virus</li>
+          <li><b><i>Boot Sector Virus</b></i></li>
           <li>Polymorphic</li>
           <li>Multipartite</li>
           <li>Trojans</li>
         </ol>
       </li>
-      <li>______C_______ are difficult to identify as they keep on changing their type and signature.
+      <li>_____________ are difficult to identify as they keep on changing their type and signature.
         <ol type="A">
           <li>Non-resident virus</li>
           <li>Boot Sector Virus</li>
-          <li>Polymorphic Virus</li>
+          <li><b><i>Polymorphic Virus</b></i></li>
           <li>Multipartite Virus</li>
         </ol>
       </li>
-      <li>A ______B_____ is a small malicious program that runs hidden in a legitimate-like software.
+      <li>A ___________ is a small malicious program that runs hidden in a legitimate-like software.
         <ol type="A">
           <li>Virus</li>
-          <li>Trojan</li>
+          <li><b><i>Trojan</b></i></li>
           <li>Shareware</li>
           <li>Adware</li>
         </ol>
       </li>
-      <li>______C______ can work in background and steals sensitive data -
+      <li>____________ can work in background and steals sensitive data.
         <ol type="A">
           <li>Virus</li>
           <li>Shareware</li>
-          <li>Trojan</li>
+          <li><b><i>Trojan</b></i></li>
           <li>Adware</li>
         </ol>
       </li>
-      <li>Trojans normally do not do one of the following. What is that?___B___
+      <li>Trojans normally do not do one of the following. What is that?
         <ol type="A">
           <li>Deleting Data</li>
-          <li>Protecting Data</li>
+          <li><b><i>Protecting Data</b></i></li>
           <li>Modifying Data</li>
           <li>Copying Data</li>
         </ol>
       </li>
-      <li>A ______B_________ provides malicious users remote control over the targeted computer.
+      <li>A _______________ provides malicious users remote control over the targeted computer.
         <ol type="A">
           <li>DDoS-Trojan</li>
-          <li>Backdoor Trojan</li>
+          <li><b><i>Backdoor Trojan</b></i></li>
           <li>Trojan-Banker</li>
           <li>Trojan-Downloader</li>
         </ol>
       </li>
       <li>
         Which of the following malwares can modify data on your system, so that your system doesn't run correctly or you
-        can no longer access specific data, and it even asks for ransom in order to give your access?____D____
+        can no longer access specific data, and it even asks for ransom in order to give your access?
         <ol type="A">
           <li>Trojans-IM</li>
           <li>Backdoor Trojans</li>
           <li>Trojan-Downloader</li>
-          <li>Ransom Trojan</li>
+          <li><b><i>Ransom Trojan</b></i></li>
         </ol>
       </li>
-      <li>A _____B______ is a method in which a computer security mechanism is bypassed untraceable for accessing the
+      <li>A ___________ is a method in which a computer security mechanism is bypassed untraceable for accessing the
         computer or its information.
         <ol type="A">
           <li>front-door</li>
-          <li>backdoor</li>
+          <li><b><i>backdoor</b></i></li>
           <li>clickjacking</li>
           <li>key-logging</li>
         </ol>
       </li>
-      <li>Backdoors cannot be designed as _______D_______
+      <li>Backdoors cannot be designed as ______________.
         <ol type="A">
           <li>the hidden part of a program</li>
           <li>as a part of Trojans</li>
           <li>embedded code of the firmware</li>
-          <li>embedded with anti-malware</li>
+          <li><b><i>embedded with anti-malware</b></i></li>
         </ol>
       </li>
-      <li>______A________ is an internet scam done by cyber-criminals where the user is convinced digitally to provide
+      <li>______________ is an internet scam done by cyber-criminals where the user is convinced digitally to provide
         confidential information.
         <ol type="A">
-          <li>Phishing attack</li>
+          <li><b><i>Phishing attack</b></i></li>
           <li>DoS attack</li>
           <li>Website attack</li>
           <li>MiTM attack</li>
         </ol>
       </li>
-      <li>Which of the following type of data, phishers cannot steal from its target victims?___D___
+      <li>Which of the following type of data, phishers cannot steal from its target victims?
         <ol type="A">
           <li>bank details</li>
           <li>phone number</li>
           <li>passwords</li>
-          <li>apps installed in the mobile</li>
+          <li><b><i>apps installed in the mobile</b></i></li>
         </ol>
       </li>
-      <li>The intent of a _______B_______ is to overkill the targeted server's bandwidth and other resources of the
+      <li>The intent of a ______________ is to overkill the targeted server's bandwidth and other resources of the
         target
         website.
         <ol type="A">
           <li>Phishing attack</li>
-          <li>DoS attack</li>
+          <li><b><i>DoS attack</b></i></li>
           <li>Website attack</li>
           <li>MiTM attack</li>
         </ol>
       </li>
-      <li>DoS is abbreviated as __________A___________
+      <li>DoS is abbreviated as _____________________
         <ol type="A">
-          <li>Denial of Service</li>
+          <li><b><i>Denial of Service</b></i></li>
           <li>Distribution of Server</li>
           <li>Distribution of Service</li>
           <li>Denial of Server</li>
@@ -552,89 +538,85 @@ Correct answer is written in ***bold/italic***.
       </li>
       <li>A DoS attack coming from a large number of IP addresses, making it hard to manually filter or crash the
         traffic
-        from such sources is known as a _______D______
+        from such sources is known as a _____________
         <ol type="A">
           <li>GoS attack</li>
           <li>PDoS attack</li>
           <li>DoS attack</li>
-          <li>DDoS attack</li>
+          <li><b><i>DDoS attack</b></i></li>
         </ol>
       </li>
-      <li>Which of the following is a type of transport layer DoS?____B?___
+      <li>Which of the following is a type of transport layer DoS?
         <ol type="A">
           <li>HTTP flooding</li>
           <li>Ping flooding</li>
-          <li>TCP flooding</li>
+          <li><b><i>TCP flooding</b></i></li>
           <li>DNS query flooding</li>
         </ol>
       </li>
-      <li>_____B_____ is a naming system given to different computers which adapt to human-readable domain names.
+      <li>__________ is a naming system given to different computers which adapt to human-readable domain names.
         <ol type="A">
           <li>HTTP</li>
-          <li>DNS</li>
+          <li><b><i>DNS</b></i></li>
           <li>WWW</li>
           <li>ISP</li>
         </ol>
       </li>
-      <li>Which of the following is a kind of attack which uses DNS based vulnerabilities for diverting the traffic of
-        the
-        internet____A___
+      <li>Which of the following is a kind of attack which uses DNS based vulnerabilities for diverting the traffic of the internet?
         <ol type="A">
-          <li>DNS poisoning</li>
+          <li><b><i>DNS poisoning</b></i></li>
           <li>DNS re-routing</li>
           <li>DNS cracking</li>
           <li>Domain link poisoning</li>
         </ol>
       </li>
-      <li>______B________ is a means of storing &amp; transmitting information in a specific format so that only those
-        for
-        whom it is planned can understand or process it.
+      <li>______________ is a means of storing &amp; transmitting information in a specific format so that only those for whom it is planned can understand or process it.
         <ol type="A">
           <li>Malware Analysis</li>
-          <li>Cryptography</li>
+          <li><b><i>Cryptography</b></i></li>
           <li>Reverse engineering</li>
           <li>Exploit writing</li>
         </ol>
       </li>
       <li>Which of the following is normally not used to provide data integrity?
         <ol type="A">
-          <li>Symmetric Encryption</li>
+          <li><b><i>Symmetric Encryption</b></i></li>
           <li>Asymmetric Encryption</li>
           <li>Hash function</li>
           <li>Message Authentication Code</li>
         </ol>
       </li>
-      <li>_____A______ is not an attack technique where numerous TCP segments are spoofed with a bogus source address
+      <li>___________ is not an attack technique where numerous TCP segments are spoofed with a bogus source address
         which
         is then sent to a server.
         <ol type="A">
           <li>SYN flooding attack</li>
           <li>ACK flooding attack</li>
           <li>Fin flooding attack</li>
-          <li>Ping flooding attack</li>
+          <li><b><i>Ping flooding attack</b></i></li>
         </ol>
       </li>
-      <li>Which of the protocol is not used in the network layer of the TCP/IP model?___D___
+      <li>Which of the protocol is not used in the network layer of the TCP/IP model?
         <ol type="A">
           <li>ICMP</li>
           <li>IP</li>
           <li>IGMP</li>
-          <li>HTTP</li>
+          <li><b><i>HTTP</b></i></li>
         </ol>
       </li>
-      <li>Which of the following the correct order of layers in TCP/IP model from top to down?___A___
+      <li>Which of the following the correct order of layers in TCP/IP model from top to down?
         <ol type="A">
-          <li>Application, Transport, Network, Data, Physical</li>
+          <li><b><i>Application, Transport, Network, Data, Physical</b></i></li>
           <li>Application, Transport, Data, Network, Physical</li>
           <li>Application, Data, Network, Transport, Physical</li>
           <li>Application, Network, Transport, Data, Physical</li>
         </ol>
       </li>
-      <li>Which of the following attacks pretends to associate a certain IP address to its MAC address in a LAN?___C___
+      <li>Which of the following attacks pretends to associate a certain IP address to its MAC address in a LAN?
         <ol type="A">
           <li>DNS spoofing</li>
           <li>DHCP spoofing</li>
-          <li>ARP spoofing</li>
+          <li><b><i>ARP spoofing</b></i></li>
           <li>SYN spoofing</li>
         </ol>
       </li>
