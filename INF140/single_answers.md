@@ -43,11 +43,7 @@ Correct answer is written in ***bold/italic***.
             The purpose of a firewall and security software is to block malicious code getting into your computer in the first place so no action is needed.
           </li>
           <li>
-            <b>
-              <i>
-                You need to update and run your anti-virus software.
-              </b>
-            </i>
+            You need to update and run your anti-virus software.
           </li>
           <li>
             <b>
