@@ -3,6 +3,8 @@
 Correct answers are written in ***bold/italic***.
 
 <!DOCTYPE html>
+<html>
+
 <head>
 <style>
 
@@ -62,7 +64,6 @@ li {
   }
 </style>
 </head>
-<html>
 <body>
 <div class="content">
   <h1>Multiple Alternative - Cybersecurity Attacks and Controls</h1>
