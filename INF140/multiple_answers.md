@@ -14,13 +14,13 @@ Correct answers are written in ***bold/italic***.
         <li>replicating itself in the infected system and network</li>
         <li>exploiting system flaws and vulnerabilities in a system</li>
         <li><b><i>running itself when certain condition is triggered</i></b></li>
-        <li>sending message to a remote controller</li>
+        <li><b><i>sending message to a remote controller</i></b></li>
       </ol></p>
     </li>
     <li>Which of the following belong to the social engineering attack?
       <p><ol Type="A">
-        <li><b><i>an attacker uses a telephone system to gain access to private personal and financial information from the
-          public</i></b></li>
+        <li>an attacker uses a telephone system to gain access to private personal and financial information from the
+          public</li>
         <li><b><i>an attacker sends an e-mail that appears to come from a legitimate business requesting “verification” of
           information</i></b></li>
         <li><b><i>an attacker pretends to be another person with the goal of gaining access physically to a system or building
@@ -34,9 +34,9 @@ Correct answers are written in ***bold/italic***.
       <p><ol Type="A">
         <li><b><i>an employee uses his/her employee card to enter an office</i></b></li>
         <li><b><i>a person provides user name and password when login to a website</i></b></li>
-        <li><b><i>a person enters the letters from the image of "I am not a robot" in a login page</i></b></li>
+        <li>a person enters the letters from the image of "I am not a robot" in a login page</li>
         <li><b><i>a person opens his/her mobile phone with fingerprint</i></b></li>
-        <li>a user in a system is prompted “Permission Denied” when he/she opens a file in the system</li>
+        <li><b><i>a user in a system is prompted “Permission Denied” when he/she opens a file in the system</i></b></li>
       </ol></p>
     </li>
     <li>Which of the following processes use an access control list?
@@ -112,17 +112,17 @@ Correct answers are written in ***bold/italic***.
     <li>Suppose a user’s password is hashed with SHA256 and the hash is then stored in a system. In practice, which of the following will significantly reduce the quality of the hash and may lead to a successful password cracking?
       <p><ol Type="A">
         <li>the user’s password consists of only 20 lower-case letters</li>
-        <li>upper-case letters in the user’s password are converted to lower-case letters before the password is hashed
-        </li>
+        <li><b><i>upper-case letters in the user’s password are converted to lower-case letters before the password is hashed
+        </i></b></li>
         <li><b><i>SHA256 is replaced with a fast hash function with 64-bit digest</i></b></li>
-        <!--<li>the user’s password has length &lt; 8</li>-->
-        <li>a dynamically varing salt is added the the calculation of the password hash</li>
+        <li>the user’s password has length &lt; 8</li>
+        <li>a dynamically varying salt is added the the calculation of the password hash</li>
         <li><b><i>the user’s password is a combination of lower-case letters, upper case letters, digits, punctuations and its
           length is 6</i></b></li>
       </ol></p>
     </li>
-    <li>In a Linux system, suppose a user’s password is stored in /etc/shadow as:<br />
-      Password:$6$lM97wGbU5S.Funda$8HxX3gD5UjdwnXD7mHu7Foh9s6w.NCn5cxifoki7pr0m01Re5VG/yad86LjKmpJuXB/66ks1Y7T5y6cjV6.351:18313:0:99999:7:::
+    <li>In a Linux system, suppose a user’s password is stored in /etc/shadow as:<br/><br/>
+      Password:<br/>$6$lM97wGbU5S.Funda$8HxX3gD5UjdwnXD7mHu7Foh9s6w.NCn5cxifoki7pr0m01Re5VG/yad86LjKmpJuXB/66ks1Y7T5y6cjV6.351:18313:0:99999:7:::<br/><br/>
       Which of the following statements about the above password file are <b><i>not</i></b> correct?
       <p><ol Type="A">
         <li><b><i>there is no login name in the file</i></b></li>
@@ -180,8 +180,8 @@ Correct answers are written in ***bold/italic***.
     </li>
     <li>Which of the following statements about HTTPS are correct?___A?B___
       <p><ol Type="A">
-        <li>it provides data confidentiality and integrity in communcations</li>
-        <li>it enables the web client to authenticate the web server by its X.509 public-key certificate</li>
+        <li><b><i>it provides data confidentiality and integrity in communications</i></b></li>
+        <li><b><i>it enables the web client to authenticate the web server by its X.509 public-key certificate</i></b></li>
         <li>it enables the web client to authenticate the web server by its PGP public-key certificate</li>
         <li>it helps the server prevent DDoS attack</li>
         <li>it enables the client to remotely login to the server in a secure manner</li>

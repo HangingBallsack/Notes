@@ -9,7 +9,7 @@ Correct answer is written in ***bold/italic***.
     <li>
       <p>
         Which of the following statements best describes modern hacker?
-      </p>
+
       <p>
         <ol type="A">
           <li>
