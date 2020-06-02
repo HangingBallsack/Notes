@@ -14,7 +14,7 @@ Correct answers are written in ***bold/italic***.
         <li>replicating itself in the infected system and network</li>
         <li>exploiting system flaws and vulnerabilities in a system</li>
         <li><b><i>running itself when certain condition is triggered</i></b></li>
-        <li><b><i>sending message to a remote controller</i></b></li>
+        <li>sending message to a remote controller</li>
       </ol></p>
     </li>
     <li>Which of the following belong to the social engineering attack?
@@ -41,7 +41,7 @@ Correct answers are written in ***bold/italic***.
     </li>
     <li>Which of the following processes use an access control list?
       <p><ol Type="A">
-        <li><b><i>a student logins mittuib with his/her student credentials</b></i></li>
+        <li>a student logins mittuib with his/her student credentials</li>
         <li><b><i>a student downloads some lecture slides at Mitt UiB</b></i></li>
         <li><b><i>a student check his/her grade for a course at mittuib</b></i></li>
         <li><b><i>a student wants to see a student fellow’s grade at mittuib but is rejected</b></i></li>
@@ -59,7 +59,7 @@ Correct answers are written in ***bold/italic***.
     </li>
     <li>Which of the following security controls heavily depend on cryptographic primitives?
       <p><ol Type="A">
-        <li>accountability</li>
+        <li><b><i>accountability</i></b></li>
         <li>authorization</li>
         <li><b><i>authentication</i></b></li>
         <li>availability</li>
@@ -191,7 +191,7 @@ Correct answers are written in ***bold/italic***.
       <p><ol Type="A">
         <li><b><i>it is used to authenticate an entity in a network</i></b></i>
         <li>it is widely used because public-key ciphers are more secure than symmetric ciphers</li>
-        <li>it is widely used because it makes key distribution more easily in the Internet</li>
+        <li><b><i>it is widely used because it makes key distribution more easily in the Internet</i></b></li>
         <li><b><i>it is used to prevent man-in-the-middle attack in a network</i></b></li>
       </ol></p>
     </li>
