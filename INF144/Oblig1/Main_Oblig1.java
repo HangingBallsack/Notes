@@ -3,7 +3,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Main_Oblig1 {
 	public static HashMap<String, ArrayList<Character>> map = new HashMap<>();
 
 	public static void main(String[] args) throws IOException {
@@ -21,7 +21,7 @@ public class Main {
 		// read input start
 		try {
 			String line = null;
-			File file = new File("Folktale.html");
+			File file = new File("Notes\\INF144\\Oblig1\\Folktale.html");
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 			if (decisions.equalsIgnoreCase("n")) {
 				while((line = br.readLine()) != null){

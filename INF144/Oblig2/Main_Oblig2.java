@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Main_Oblig2 {
 	static PrintWriter txtfile;
 	static int order = 1;
 	static String eventyr;
